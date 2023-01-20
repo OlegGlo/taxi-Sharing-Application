@@ -7,3 +7,13 @@
 <p align="center">
   what it is and how it works. [description]
 </p>
+
+<p>
+    workflow:
+
+    master is production
+
+    dev is current build
+
+    have your own branch from that
+</p>
