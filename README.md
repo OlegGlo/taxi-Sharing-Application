@@ -11,9 +11,9 @@
 <p>
     workflow:
 
-    master is production
+    master is current build
 
-    dev is current build
+    dev is the production (final version)
 
     have your own branch from that
 </p>
