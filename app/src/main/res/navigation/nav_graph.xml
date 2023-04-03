@@ -28,7 +28,7 @@
     <fragment
         android:id="@+id/Groups"
         android:name="com.example.fareshare.Groups"
-        android:label="@string/groups"
+        android:label="@string/groups_label"
         tools:layout="@layout/groups">
 
         <action
@@ -37,6 +37,24 @@
 
         <action
             android:id="@+id/action_Groups_to_Groups"
+            app:destination="@id/Groups" />
+
+        <action
+            android:id="@+id/action_Groups_to_CreateGroup"
+            app:destination="@id/CreateGroup" />
+    </fragment>
+    <fragment
+        android:id="@+id/CreateGroup"
+        android:name="com.example.fareshare.CreateGroup"
+        android:label="@string/create_group_label"
+        tools:layout="@layout/create_group">
+
+        <action
+            android:id="@+id/action_CreateGroup_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
+        <action
+            android:id="@+id/action_CreateGroup_to_Groups"
             app:destination="@id/Groups" />
     </fragment>
 </navigation>
