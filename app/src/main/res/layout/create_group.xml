@@ -10,7 +10,7 @@
         android:id="@+id/textview_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="this is the CreateGroup page"
+        android:text="Enter the group member's phone number below!"
         app:layout_constraintBottom_toTopOf="@id/button_create_group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +41,15 @@
         app:menu="@menu/bottom_nav" >
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <SearchView
+        android:layout_width="404dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_first" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
