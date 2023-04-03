@@ -16,4 +16,5 @@
     <string name="groups">Groups</string>
     <string name="account">Account</string>
     <string name="create_group">Create Group</string>
+    <string name="phone_number_prompt">Enter the group member\'s phone number below!</string>
 </resources>
