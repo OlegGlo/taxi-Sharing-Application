@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_first">
 
         <action
-            android:id="@+id/action_FirstFragment_to_Groups"
-            app:destination="@id/Groups" />
+            android:id="@+id/action_FirstFragment_to_Scanner"
+            app:destination="@id/QRCodeScanner" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -26,10 +26,10 @@
             app:destination="@id/FirstFragment" />
     </fragment>
     <fragment
-        android:id="@+id/Groups"
-        android:name="com.example.fareshare.Groups"
-        android:label="@string/groups_label"
-        tools:layout="@layout/groups">
+        android:id="@+id/GroupsPage"
+        android:name="com.example.fareshare.GroupsPage"
+        android:label="@string/groups_page_label"
+        tools:layout="@layout/groups_page">
 
         <action
             android:id="@+id/action_Groups_to_FirstFragment"
@@ -37,17 +37,17 @@
 
         <action
             android:id="@+id/action_Groups_to_Groups"
-            app:destination="@id/Groups" />
+            app:destination="@id/GroupsPage" />
 
         <action
             android:id="@+id/action_Groups_to_CreateGroup"
-            app:destination="@id/CreateGroup" />
+            app:destination="@id/CreateGroupPage" />
     </fragment>
     <fragment
-        android:id="@+id/CreateGroup"
-        android:name="com.example.fareshare.CreateGroup"
-        android:label="@string/create_group_label"
-        tools:layout="@layout/create_group">
+        android:id="@+id/CreateGroupPage"
+        android:name="com.example.fareshare.CreateGroupPage"
+        android:label="@string/create_group_page_label"
+        tools:layout="@layout/create_group_page">
 
         <action
             android:id="@+id/action_CreateGroup_to_FirstFragment"
@@ -55,6 +55,16 @@
 
         <action
             android:id="@+id/action_CreateGroup_to_Groups"
-            app:destination="@id/Groups" />
+            app:destination="@id/GroupsPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/QRCodeScanner"
+        android:name="com.example.fareshare.QRCodeScanner"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+<!--        <action-->
+<!--            android:id="@+id/action_FirstFragment_to_Scanner"-->
+<!--            app:destination="@id/QRCodeScanner" />-->
     </fragment>
 </navigation>

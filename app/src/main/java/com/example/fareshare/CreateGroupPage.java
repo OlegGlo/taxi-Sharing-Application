@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fareshare.databinding.CreateGroupBinding;
+import com.example.fareshare.databinding.CreateGroupPageBinding;
 
-public class CreateGroup extends Fragment {
+public class CreateGroupPage extends Fragment {
 
-    private CreateGroupBinding binding;
+    private CreateGroupPageBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class CreateGroup extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = CreateGroupBinding.inflate(inflater, container, false);
+        binding = CreateGroupPageBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -32,7 +32,7 @@ public class CreateGroup extends Fragment {
         view.findViewById(R.id.homeFragment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(CreateGroup.this)
+                NavHostFragment.findNavController(CreateGroupPage.this)
                         .navigate(R.id.action_CreateGroup_to_FirstFragment);
             }
         });
@@ -40,7 +40,7 @@ public class CreateGroup extends Fragment {
         view.findViewById(R.id.groupsFragment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(CreateGroup.this)
+                NavHostFragment.findNavController(CreateGroupPage.this)
                         .navigate(R.id.action_CreateGroup_to_Groups);
             }
         });
@@ -48,7 +48,7 @@ public class CreateGroup extends Fragment {
         view.findViewById(R.id.accountFragment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(CreateGroup.this)
+                NavHostFragment.findNavController(CreateGroupPage.this)
                         .navigate(R.id.action_CreateGroup_to_FirstFragment);
             }
         });
@@ -56,7 +56,7 @@ public class CreateGroup extends Fragment {
         binding.buttonCreateGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(CreateGroup.this)
+                NavHostFragment.findNavController(CreateGroupPage.this)
                         .navigate(R.id.action_Groups_to_CreateGroup);
             }
         });
