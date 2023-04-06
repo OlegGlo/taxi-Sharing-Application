@@ -7,13 +7,13 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fareshare.databinding.FragmentFirstBinding;
+import com.example.fareshare.databinding.FragmentHomeBinding;
+import com.google.android.material.snackbar.Snackbar;
 
-public class FirstFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private FragmentHomeBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,11 +29,16 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
+        binding.offerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                Snackbar.make(view, "Started Carpool Offer!", Snackbar.LENGTH_SHORT).show();
+            }
+        });
+        binding.requestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Started Carpool Request!", Snackbar.LENGTH_SHORT).show();
             }
         });
     }
@@ -43,5 +48,4 @@ public class FirstFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }
