@@ -65,16 +65,16 @@
                 android:id="@+id/pickupTime_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:autofillHints=""
                 android:backgroundTint="@color/fareShare_yellow"
-                android:hint="Pickup Time (24hr): hh:mm:ss"
-                android:shadowColor="@color/black"
-                android:textColorHint="@color/black"
-                android:padding="12dp"
+                android:hint="Pickup Time (24hr): hh:mm"
                 android:inputType="time"
+                android:padding="12dp"
+                android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:layout_marginTop="40dp"
-                android:autofillHints="" />
+                android:textColorHint="@color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
