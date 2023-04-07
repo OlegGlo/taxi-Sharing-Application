@@ -1,0 +1,111 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white"
+    tools:context=".IncidentFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            android:padding="30dp">
+
+            <TextView
+                android:id="@+id/incident_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Incident Report"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/incident_firstname_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/register_Name_hint"
+                android:backgroundTint="@color/fareShare_yellow"
+                android:textColorHint="@color/black"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="40dp"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/incident_lastname_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/fareShare_yellow"
+                android:hint="@string/register_Lastname_hint"
+                android:shadowColor="@color/black"
+                android:textColorHint="@color/black"
+                android:padding="12dp"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="40dp"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/report_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/fareShare_yellow"
+                android:hint="Enter details of the incident here"
+                android:shadowColor="@color/black"
+                android:textColorHint="@color/black"
+                android:padding="12dp"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="40dp"
+                android:autofillHints="" />
+
+           <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp">
+
+                <Button
+                    android:id="@+id/submitIncidentButton"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="Submit"
+                    android:backgroundTint="@color/fareShare_yellow"
+                    android:textColor="@color/black"
+                    app:cornerRadius="20dp"/>
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="@color/fareShare_yellow"
+                    android:text="@string/register_cancel_button"
+                    android:textColor="@color/black"
+                    app:cornerRadius="20dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
