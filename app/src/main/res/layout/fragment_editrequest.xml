@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/white"
-    tools:context=".RequestFragment">
+    tools:context=".EditRequestFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,20 +23,20 @@
             android:padding="30dp">
 
             <TextView
-                android:id="@+id/requestCarpool_text"
+                android:id="@+id/editCarpool_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Request Carpool"
+                android:text="Edit Carpool"
                 android:textSize="36sp"
                 android:textStyle="bold"
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/destination_box"
+                android:id="@+id/edit_destination_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/fareShare_yellow"
-                android:hint="Destination"
+                android:hint="@string/destination_box"
                 android:shadowColor="@color/black"
                 android:textColorHint="@color/black"
                 android:padding="12dp"
@@ -47,11 +47,11 @@
                 android:autofillHints="" />
 
             <EditText
-                android:id="@+id/pickup_box"
+                android:id="@+id/edit_pickup_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/fareShare_yellow"
-                android:hint="Pickup Address"
+                android:hint="@string/pickup_box"
                 android:shadowColor="@color/black"
                 android:textColorHint="@color/black"
                 android:padding="12dp"
@@ -62,11 +62,11 @@
                 android:autofillHints="" />
 
             <EditText
-                android:id="@+id/pickupTime_box"
+                android:id="@+id/edit_pickupTime_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/fareShare_yellow"
-                android:hint="Pickup Time (24hr): hh:mm:ss"
+                android:hint="@text/pickupTime_box"
                 android:shadowColor="@color/black"
                 android:textColorHint="@color/black"
                 android:padding="12dp"
@@ -82,7 +82,7 @@
                 android:paddingTop="20dp">
 
                 <Button
-                    android:id="@+id/submitIncidentButton"
+                    android:id="@+id/submitRequestButton"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
@@ -99,7 +99,7 @@
                     android:layout_weight="1"
                     android:layout_margin="5dp"
                     android:backgroundTint="@color/fareShare_yellow"
-                    android:text="@string/register_cancel_button"
+                    android:text="Cancel Carpool"
                     android:textColor="@color/black"
                     app:cornerRadius="20dp" />
 
