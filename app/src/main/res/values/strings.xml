@@ -81,6 +81,11 @@
     <string name="request_incoming_next_text">NEXT</string>
     <string name="request_incoming_name_text">Firstname Lastname</string>
     <string name="request_incoming_rating_text">Rating: N stars</string>
+    <string name="carpool_ride_message_text">Ongoing Ride Information</string>
+    <string name="carpool_ride_page_mapview_desc">Map displaying route</string>
+    <string name="carpool_ride_page_taxiID_text">TaxiID: placeholder</string>
+    <string name="carpool_ride_page_passengers_text">Passengers: placeholder</string>
+    <string name="carpool_ride_page_dest_text">Destination: placeholder</string>
 
 
 </resources>

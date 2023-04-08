@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/carpool_ride_page_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/carpool_ride_message_text"
+                android:textAlignment="center"
+                android:textColor="@color/fareShare_black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:paddingTop="30sp" />
+
+            <TextView
+                android:id="@+id/carpool_ride_page_taxiID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/carpool_ride_page_taxiID_text"
+                android:textColor="@color/fareShare_black"
+                android:padding="12sp"/>
+
+            <TextView
+                android:id="@+id/carpool_ride_page_passengers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/carpool_ride_page_passengers_text"
+                android:textColor="@color/fareShare_black"
+                android:padding="12sp"/>
+
+            <TextView
+                android:id="@+id/carpool_ride_page_dest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/carpool_ride_page_dest_text"
+                android:textColor="@color/fareShare_black"
+                android:padding="12sp"/>
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/carpool_ride_page_mapview"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:contentDescription="@string/carpool_ride_page_mapview_desc"
+                android:padding="12sp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
