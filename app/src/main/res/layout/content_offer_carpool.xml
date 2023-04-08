@@ -87,6 +87,35 @@
                 android:layout_marginTop="40dp"
                 android:autofillHints="" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+                <Button
+                    android:id="@+id/offer_carpool_submit_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/offer_carpool_submit_text"
+                    android:backgroundTint="@color/fareShare_yellow"
+                    android:textColor="@color/black"
+                    app:cornerRadius="20dp" />
+
+                <Button
+                    android:id="@+id/offer_carpool_cancel_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="@string/offer_carpool_cancel_text"
+                    android:backgroundTint="@color/fareShare_yellow"
+                    android:textColor="@color/black"
+                    app:cornerRadius="20dp" />
+            </LinearLayout>
+
             <!-- Drop-down to select vehicle (sedan, suv, minivan, etc.) -->
 <!--            <Spinner-->
 <!--                android:id="@+id/static_spinner"-->
