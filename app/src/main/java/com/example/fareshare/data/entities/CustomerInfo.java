@@ -15,18 +15,24 @@ import com.example.fareshare.data.entities.wrappers.Address;
 public class CustomerInfo {
 
     @PrimaryKey
+    @ColumnInfo(name = "customer_id")
+    private long customerID;
     @NonNull
+    @ColumnInfo(name = "email")
     private String email;
+    @ColumnInfo(name = "password")
     private String password;
     @ColumnInfo(name = "first_name")
     private String firstName;
     @ColumnInfo(name = "last_name")
     private String lastName;
     @Embedded private Address address;
+    @NonNull
     @ColumnInfo(name = "phone_number")
     private String phoneNumber;
     @ColumnInfo(name = "ref_profile_picture")
     private String refProfilePicture;
+    @ColumnInfo(name = "rating")
     private double rating;
 
     public CustomerInfo(@NonNull String email, String password, String firstName, String lastName, Address address, String phoneNumber) {
@@ -41,6 +47,14 @@ public class CustomerInfo {
     @Ignore
     public boolean verifyUser(String email, String password) {
         return this.email == email && this.password == password;
+    }
+
+    public long getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(long customerID) {
+        this.customerID = customerID;
     }
 
     public String getEmail() {

@@ -8,13 +8,17 @@ import androidx.room.RoomDatabase;
 
 import com.example.fareshare.data.daos.CustomerInfoDao;
 
+import com.example.fareshare.data.entities.CarpoolGroup;
 import com.example.fareshare.data.entities.CustomerInfo;
+import com.example.fareshare.data.entities.GroupMemberCrossRef;
 
 
 @Database(
-        version = 1,
+        version = 2,
         entities = {
-            CustomerInfo.class}
+            CustomerInfo.class,
+            CarpoolGroup.class,
+            GroupMemberCrossRef.class}
         )
 public abstract class CustomerInfoDB extends RoomDatabase {
 
