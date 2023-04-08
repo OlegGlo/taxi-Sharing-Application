@@ -22,11 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:text="Destination address:"
-        app:layout_constraintBottom_toTopOf="@id/button_create_group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterTextPickupAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPickupAddress" />
 
     <TextView
         android:id="@+id/textview_enter_phone"
@@ -42,7 +41,7 @@
         android:id="@+id/textview_enter_pickup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit your pickup address"
+        android:text="Enter your pickup address"
         app:layout_constraintBottom_toTopOf="@id/button_accept_group_carpool"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
@@ -79,12 +78,14 @@
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <EditText
-        android:id="@+id/enterTextPickupAddress"
+        android:id="@+id/editTextPickupAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPostalAddress"
+        android:minHeight="48dp"
+        android:hint="Enter pickup address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

@@ -60,10 +60,38 @@
         <action
             android:id="@+id/action_CreateGroup_to_FirstFragment"
             app:destination="@id/FirstFragment" />
-
         <action
             android:id="@+id/action_CreateGroup_to_Groups"
             app:destination="@id/GroupsPage" />
+        <action
+            android:id="@+id/action_CreateGroup_to_GroupInfo"
+            app:destination="@id/GroupInfoPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/GroupInfoPage"
+        android:name="com.example.fareshare.GroupInfoPage"
+        android:label="Group Info"
+        tools:layout="@layout/group_info_page">
+
+        <action
+            android:id="@+id/action_GroupInfo_to_EditGroup"
+            app:destination="@id/EditGroupPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/EditGroupPage"
+        android:name="com.example.fareshare.EditGroupPage"
+        android:label="Edit Group"
+        tools:layout="@layout/edit_group_page">
+
+        <action
+            android:id="@+id/action_EditGroup_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_EditGroup_to_Groups"
+            app:destination="@id/GroupsPage" />
+        <action
+            android:id="@+id/action_EditGroup_to_GroupInfo"
+            app:destination="@id/GroupInfoPage" />
     </fragment>
     <fragment
         android:id="@+id/ScanPage"

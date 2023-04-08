@@ -21,4 +21,5 @@
     <string name="scan_taxi">Scan QR Code</string>
     <string name="destination_prompt">Enter your destination address</string>
     <string name="pickup_prompt">Enter your pickup address</string>
+    <string name="save_changes">Save Changes</string>
 </resources>

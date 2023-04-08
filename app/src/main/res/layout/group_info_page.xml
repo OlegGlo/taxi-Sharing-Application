@@ -10,10 +10,10 @@
         android:id="@+id/textview_enter_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="216dp"
         android:text="Group members' phone numbers:"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,9 +21,11 @@
         android:id="@+id/textview_enter_destination"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:text="Destination address:"
-        app:layout_constraintBottom_toTopOf="@id/button_create_group"
+        app:layout_constraintBottom_toTopOf="@id/button_save_changes"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.77" />
@@ -33,23 +35,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pickup address:"
-        app:layout_constraintBottom_toTopOf="@id/button_create_group"
+        app:layout_constraintBottom_toTopOf="@id/button_edit_group"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.476" />
+        app:layout_constraintVertical_bias="0.737" />
 
     <Button
-        android:id="@+id/button_create_group"
+        android:id="@+id/button_edit_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/create_group"
+        android:text="Edit Group"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_enter_phone"
-        app:layout_constraintVertical_bias="0.679" />
+        app:layout_constraintVertical_bias="0.595" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
@@ -61,40 +64,40 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_create_group"
+        app:layout_constraintTop_toBottomOf="@+id/button_save_changes"
         app:layout_constraintVertical_bias="0.99"
         app:menu="@menu/bottom_nav" >
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewEnterPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="---phone numbers---"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_enter_phone" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewEnterPickup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="---pickup address---"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_enter_pickup" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewEnterDestination"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="---destination address---"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
