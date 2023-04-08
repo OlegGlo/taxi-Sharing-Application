@@ -1,4 +1,4 @@
-package com.example.fareshare;
+package com.example.fareshare.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.fareshare.R;
 import com.example.fareshare.databinding.FragmentAuthenticatorBinding;
 import com.google.android.material.snackbar.Snackbar;
 
