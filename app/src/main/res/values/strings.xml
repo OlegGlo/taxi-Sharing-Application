@@ -74,6 +74,13 @@
     <string name="offer_carpool_numpass_box_text">Enter Maximum Number of Passengers</string>
     <string name="offer_carpool_submit_text">SUBMIT</string>
     <string name="offer_carpool_cancel_text">CANCEL</string>
+    <string name="request_incoming_ppic_desc">requester profile picture</string>
+    <string name="request_incoming_accept_text">ACCEPT</string>
+    <string name="request_incoming_reject_text">REJECT</string>
+    <string name="request_incoming_back_text">BACK</string>
+    <string name="request_incoming_next_text">NEXT</string>
+    <string name="request_incoming_name_text">Firstname Lastname</string>
+    <string name="request_incoming_rating_text">Rating: N stars</string>
 
 
 </resources>
