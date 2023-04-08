@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/carpool_end_page_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/carpool_end_page_title_text"
+            android:textColor="@color/fareShare_black"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:padding="32sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/carpool_end_page_fare_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/carpool_end_page_fare_message_text"
+                android:textAlignment="textEnd"
+                android:textColor="@color/fareShare_black"
+                android:textSize="32sp" />
+
+            <TextView
+                android:id="@+id/carpool_end_page_fare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/carpool_end_page_fare_text"
+                android:textAlignment="viewStart"
+                android:textColor="@color/fareShare_yellow"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/carpool_end_page_rate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/carpool_end_page_rate_button_text"
+            android:layout_marginTop="32sp"
+            android:layout_marginHorizontal="72sp"
+            android:backgroundTint="@color/fareShare_yellow"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:cornerRadius="20dp" />
+
+        <Button
+            android:id="@+id/carpool_end_page_report_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/carpool_end_page_report_button_text"
+            android:layout_marginTop="32sp"
+            android:layout_marginHorizontal="72sp"
+            android:backgroundTint="@color/fareShare_yellow"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:cornerRadius="20dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

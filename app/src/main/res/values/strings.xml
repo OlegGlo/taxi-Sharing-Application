@@ -86,6 +86,11 @@
     <string name="carpool_ride_page_taxiID_text">TaxiID: placeholder</string>
     <string name="carpool_ride_page_passengers_text">Passengers: placeholder</string>
     <string name="carpool_ride_page_dest_text">Destination: placeholder</string>
+    <string name="carpool_end_page_title_text">Thanks for Riding with FareShare!</string>
+    <string name="carpool_end_page_fare_message_text">"Your fare is: "</string>
+    <string name="carpool_end_page_fare_text">$X.XX</string>
+    <string name="carpool_end_page_rate_button_text">Rate Passengers</string>
+    <string name="carpool_end_page_report_button_text">Report Incident</string>
 
 
 </resources>
