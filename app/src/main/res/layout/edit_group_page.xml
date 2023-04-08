@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateGroupPage">
+    tools:context=".EditGroupPage">
 
     <TextView
         android:id="@+id/textview_enter_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="@string/phone_number_prompt"
+        android:text="Edit the group members' phone numbers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/textview_enter_destination"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/destination_prompt"
+        android:text="Edit your destination address"
         app:layout_constraintBottom_toTopOf="@id/button_create_group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         android:id="@+id/textview_enter_pickup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pickup_prompt"
+        android:text="Edit your pickup address"
         app:layout_constraintBottom_toTopOf="@id/button_create_group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

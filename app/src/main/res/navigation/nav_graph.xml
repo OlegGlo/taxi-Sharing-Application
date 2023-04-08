@@ -12,8 +12,16 @@
         tools:layout="@layout/fragment_first">
 
         <action
+            android:id="@+id/action_FirstFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+
+        <action
+            android:id="@+id/action_FirstFragment_to_Groups"
+            app:destination="@id/GroupsPage" />
+
+        <action
             android:id="@+id/action_FirstFragment_to_Scanner"
-            app:destination="@id/QRCodeScanner" />
+            app:destination="@id/ScanPage" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -58,13 +66,9 @@
             app:destination="@id/GroupsPage" />
     </fragment>
     <fragment
-        android:id="@+id/QRCodeScanner"
-        android:name="com.example.fareshare.QRCodeScanner"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
-<!--        <action-->
-<!--            android:id="@+id/action_FirstFragment_to_Scanner"-->
-<!--            app:destination="@id/QRCodeScanner" />-->
+        android:id="@+id/ScanPage"
+        android:name="com.example.fareshare.ScanPage"
+        android:label="@string/scanner_label"
+        tools:layout="@layout/fragment_scan_page">
     </fragment>
 </navigation>

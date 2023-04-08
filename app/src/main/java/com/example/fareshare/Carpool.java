@@ -12,8 +12,13 @@ public class Carpool {
     String taxiID;
     boolean ongoing;
 
-    public Carpool() {
-
+    public Carpool(String passenger, String destination, String taxiID, boolean ongoing) {
+        this.numPassengers = 1;
+        this.passengers = new ArrayList<>();
+        addPassenger(passenger);
+        this.destination = destination;
+        this.taxiID = taxiID;
+        this.ongoing = ongoing;
     }
 
     public void addCarpool(int numPassengers, List<String> passengers, String destination, String taxiID, boolean ongoing) {

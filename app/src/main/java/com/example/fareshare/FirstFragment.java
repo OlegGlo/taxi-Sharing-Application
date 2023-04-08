@@ -36,6 +36,30 @@ public class FirstFragment extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_Scanner);
             }
         });
+
+        view.findViewById(R.id.homeFragment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_FirstFragment);
+            }
+        });
+
+        view.findViewById(R.id.groupsFragment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_Groups);
+            }
+        });
+
+        view.findViewById(R.id.accountFragment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_FirstFragment);
+            }
+        });
     }
 
     @Override

@@ -16,5 +16,9 @@
     <string name="groups">Groups</string>
     <string name="account">Account</string>
     <string name="create_group">Create Group</string>
-    <string name="phone_number_prompt">Enter the group member\'s phone number below!</string>
+    <string name="phone_number_prompt">Enter the group members\' phone numbers</string>
+    <string name="scanner_label">Scanner</string>
+    <string name="scan_taxi">Scan QR Code</string>
+    <string name="destination_prompt">Enter your destination address</string>
+    <string name="pickup_prompt">Enter your pickup address</string>
 </resources>
