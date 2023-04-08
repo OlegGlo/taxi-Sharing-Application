@@ -32,35 +32,6 @@
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/incident_firstname_box"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/register_Name_hint"
-                android:backgroundTint="@color/fareShare_yellow"
-                android:textColorHint="@color/black"
-                android:padding="12dp"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background"
-                android:layout_marginTop="40dp"
-                android:inputType="textPersonName"
-                android:autofillHints="" />
-
-            <EditText
-                android:id="@+id/incident_lastname_box"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/fareShare_yellow"
-                android:hint="@string/register_Lastname_hint"
-                android:shadowColor="@color/black"
-                android:textColorHint="@color/black"
-                android:padding="12dp"
-                android:inputType="textPersonName"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background"
-                android:layout_marginTop="40dp"
-                android:autofillHints="" />
-
-            <EditText
                 android:id="@+id/report_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
