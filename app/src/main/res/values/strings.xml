@@ -63,6 +63,13 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="offer_wait_message_text">PLEASE WAIT WHILE WE LOOK FOR PENDING REQUESTS</string>
+    <string name="offer_wait_map_description">Map Displaying Destination</string>
+    <string name="carpool_offer_title_text">Carpool Information</string>
+    <string name="offer_carpool_destination_box_text">Enter Destination</string>
+    <string name="offer_carpool_pickup_box_text">Enter Pick-up Location</string>
+    <string name="offer_carpool_date_box_text">Enter Date and Time</string>
+    <string name="offer_carpool_numpass_box_text">Enter Maximum Number of Passengers</string>
 
 
 </resources>
