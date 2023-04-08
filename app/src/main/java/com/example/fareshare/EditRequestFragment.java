@@ -54,6 +54,7 @@ public class RequestFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(RequestFragment.this)
                         .navigate(R.id.action_editRequestFragment_to_homeFragment);
+                //TODO: remove request info
             }
         });
     }
