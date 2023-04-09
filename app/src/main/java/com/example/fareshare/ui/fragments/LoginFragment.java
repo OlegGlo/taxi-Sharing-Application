@@ -10,16 +10,16 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fareshare.CustomerInfoViewModel;
+import com.example.fareshare.viewmodels.CustomerInfoViewModel;
 import com.example.fareshare.R;
-import com.example.fareshare.data.entities.CustomerIdentity;
+import com.example.fareshare.data.entities.wrappers.CustomerIdentity;
 import com.example.fareshare.databinding.FragmentLoginBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 public class LoginFragment extends Fragment {
 
     private FragmentLoginBinding binding;
-    private CustomerInfoViewModel viewModel;
+    private CustomerInfoViewModel CIViewModel;
 
     @Override
     public View onCreateView(
@@ -35,14 +35,14 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        viewModel = new ViewModelProvider(getActivity()).get(CustomerInfoViewModel.class);
+        CIViewModel = new ViewModelProvider(requireActivity()).get(CustomerInfoViewModel.class);
 
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = binding.emailUsername.getText().toString();
                 String password = binding.password.getText().toString();
-                CustomerIdentity id = viewModel.getVerificationInfo(email);
+                CustomerIdentity id = CIViewModel.getVerificationInfo(email);
 
                 if (email.equals("admin") && password.equals("1234")) {
                     Snackbar.make(view, "Admin Login", Snackbar.LENGTH_SHORT).show();
