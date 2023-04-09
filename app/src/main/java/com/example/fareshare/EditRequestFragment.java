@@ -15,7 +15,7 @@ import com.example.fareshare.databinding.FragmentEditrequestBinding;
 
 import org.w3c.dom.Text;
 
-public class RequestFragment extends Fragment {
+public class EditRequestFragment extends Fragment {
 
     private FragmentEditrequestBinding binding;
 
@@ -29,6 +29,7 @@ public class RequestFragment extends Fragment {
         return binding.getRoot();
 
     }
+
     @Override
     protected void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -58,3 +59,4 @@ public class RequestFragment extends Fragment {
             }
         });
     }
+}

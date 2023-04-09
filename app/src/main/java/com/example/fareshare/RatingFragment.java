@@ -29,8 +29,8 @@ public class RatingFragment extends Fragment {
 
     }
     @Override
-    protected void onViewCreate(@NonNull View view, Bundle savedInstanceState) {
-        super.onCreate(view, savedInstanceState);
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreate(view, savedInstanceState);
 
         RatingBar ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
         Button submitButton = (Button) view.findViewById(R.id.submitRatingButton);
