@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/white"
-    tools:context=".ui.LoginFragment">
+    tools:context=".ui.fragments.LoginFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

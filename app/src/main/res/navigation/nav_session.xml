@@ -7,18 +7,14 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.fareshare.ui.HomeFragment"
+        android:name="com.example.fareshare.ui.fragments.HomeFragment"
         android:label="@string/title_activity_home"
         tools:layout="@layout/fragment_home" >
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.fareshare.ui.ProfileFragment"
+        android:name="com.example.fareshare.ui.fragments.ProfileFragment"
         android:label="@string/registration_page_title"
         tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/groupsFragment"
-        android:name="com.example.fareshare.ui.GroupsFragment"
-        android:label="Groups"
-        tools:layout="@layout/fragment_groups" />
+    <include app:graph="@navigation/nav_group" />
 </navigation>

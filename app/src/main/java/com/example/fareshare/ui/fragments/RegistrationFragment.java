@@ -1,4 +1,4 @@
-package com.example.fareshare.ui;
+package com.example.fareshare.ui.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.example.fareshare.ui;
+package com.example.fareshare.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fareshare.R;
 import com.example.fareshare.databinding.FragmentAuthenticatorBinding;
+import com.example.fareshare.ui.activities.SessionActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 public class AuthenticatorFragment extends Fragment {

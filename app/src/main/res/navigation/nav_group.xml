@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_group"
+    app:startDestination="@id/groupsPage">
+
+    <fragment
+        android:id="@+id/groupsPage"
+        android:name="com.example.fareshare.ui.fragments.GroupsPage"
+        android:label="groups_page"
+        tools:layout="@layout/groups_page" >
+        <action
+            android:id="@+id/action_groupsPage_to_createGroupPage"
+            app:destination="@id/createGroupPage" />
+        <action
+            android:id="@+id/action_groupsPage_to_groupInfoPage"
+            app:destination="@id/groupInfoPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/createGroupPage"
+        android:name="com.example.fareshare.ui.fragments.CreateGroupPage"
+        android:label="create_group_page"
+        tools:layout="@layout/create_group_page" >
+        <action
+            android:id="@+id/action_createGroupPage_to_groupsPage"
+            app:destination="@id/groupsPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupInfoPage"
+        android:name="com.example.fareshare.ui.fragments.GroupInfoPage"
+        android:label="group_info_page"
+        tools:layout="@layout/group_info_page" >
+        <action
+            android:id="@+id/action_groupInfoPage_to_editGroupPage"
+            app:destination="@id/editGroupPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/editGroupPage"
+        android:name="com.example.fareshare.ui.fragments.EditGroupPage"
+        android:label="edit_group_page"
+        tools:layout="@layout/edit_group_page" />
+</navigation>
