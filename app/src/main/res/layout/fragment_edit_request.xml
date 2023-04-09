@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/white"
-    tools:context=".EditrequestFragment">
+    tools:context=".RequestFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/fareShare_yellow"
-                android:hint="@text/pickupTime_box"
+                android:hint="pickup time"
                 android:shadowColor="@color/black"
                 android:textColorHint="@color/black"
                 android:padding="12dp"

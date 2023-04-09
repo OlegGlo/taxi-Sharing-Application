@@ -11,13 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fareshare.databinding.FragmentEditrequestBinding;
+import com.example.fareshare.databinding.FragmentEditRequestBinding;
 
 import org.w3c.dom.Text;
 
 public class EditRequestFragment extends Fragment {
 
-    private FragmentEditrequestBinding binding;
+    private FragmentEditRequestBinding binding;
 
     @Override
     public View onCreateView(
@@ -25,7 +25,7 @@ public class EditRequestFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentEditrequestBinding.inflate(inflater, container, false);
+        binding = FragmentEditRequestBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -45,7 +45,7 @@ public class EditRequestFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //TODO: Update Request Obj
-                NavHostFragment.findNavController(RequestFragment.this)
+                NavHostFragment.findNavController(EditRequestFragment.this)
                         .navigate(R.id.action_editRequestFragment_to_homeFragment);
             }
         });
@@ -53,7 +53,7 @@ public class EditRequestFragment extends Fragment {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(RequestFragment.this)
+                NavHostFragment.findNavController(EditRequestFragment.this)
                         .navigate(R.id.action_editRequestFragment_to_homeFragment);
                 //TODO: remove request info
             }
