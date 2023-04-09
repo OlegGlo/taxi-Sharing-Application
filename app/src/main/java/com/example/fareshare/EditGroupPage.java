@@ -48,7 +48,7 @@ public class EditGroupPage extends Fragment {
             }
         });
 
-        view.findViewById(R.id.groupsFragment).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.groupsPage).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(EditGroupPage.this)

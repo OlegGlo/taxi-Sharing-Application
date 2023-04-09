@@ -34,7 +34,7 @@ public class SessionActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homeFragment, R.id.groupsFragment, R.id.profileFragment) //TODO: Update with correct pages
+                R.id.homeFragment, R.id.groupsPage, R.id.profileFragment) //TODO: Update with correct pages
                 .setOpenableLayout(drawer)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
