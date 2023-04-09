@@ -44,7 +44,7 @@ public class CreateGroupPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(CreateGroupPage.this)
-                        .navigate(R.id.action_CreateGroup_to_FirstFragment);
+                        .navigate(R.id.action_createGroupPage_to_homeFragment);
             }
         });
 
@@ -52,7 +52,7 @@ public class CreateGroupPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(CreateGroupPage.this)
-                        .navigate(R.id.action_CreateGroup_to_Groups);
+                        .navigate(R.id.action_createGroupPage_to_groupsPage);
             }
         });
 
@@ -60,7 +60,7 @@ public class CreateGroupPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(CreateGroupPage.this)
-                        .navigate(R.id.action_CreateGroup_to_FirstFragment);
+                        .navigate(R.id.action_createGroupPage_to_accountFragment);
             }
         });
 
@@ -72,7 +72,7 @@ public class CreateGroupPage extends Fragment {
                 dAdd = destination_address.getText().toString();
                 // saved these values but not sure how to get them to show on info page
                 NavHostFragment.findNavController(CreateGroupPage.this)
-                        .navigate(R.id.action_CreateGroup_to_GroupInfo);
+                        .navigate(R.id.action_createGroupPage_to_groupInfoPage);
             }
         });
 
