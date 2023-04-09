@@ -33,7 +33,7 @@ public class GroupsPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(GroupsPage.this)
-                        .navigate(R.id.action_Groups_to_FirstFragment);
+                        .navigate(R.id.action_groupsPage_to_homeFragment);
             }
         });
 
@@ -41,7 +41,7 @@ public class GroupsPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(GroupsPage.this)
-                        .navigate(R.id.action_Groups_to_Groups);
+                        .navigate(R.id.action_groupsPage_to_groupsPage);
             }
         });
 
@@ -49,7 +49,7 @@ public class GroupsPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(GroupsPage.this)
-                        .navigate(R.id.action_Groups_to_FirstFragment);
+                        .navigate(R.id.action_groupsPage_to_accountFragment);
             }
         });
 
@@ -57,7 +57,7 @@ public class GroupsPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(GroupsPage.this)
-                        .navigate(R.id.action_Groups_to_CreateGroup);
+                        .navigate(R.id.action_groupsPage_to_createGroupPage);
             }
         });
 
