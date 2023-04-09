@@ -29,8 +29,9 @@ public class EditRequestFragment extends Fragment {
         return binding.getRoot();
 
     }
+
     @Override
-    protected void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         Button submitButton = (Button) view.findViewById(R.id.submitEditRequestButton);
@@ -44,17 +45,20 @@ public class EditRequestFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //TODO: Update Request Obj
-                NavHostFragment.findNavController(EditRequestFragment.this)
-                        .navigate(R.id.action_editRequestFragment_to_homeFragment);
+                // NavHostFragment.findNavController(EditRequestFragment.this)
+                //        .navigate(R.id.action_editRequestFragment_to_homeFragment);
+                return;
             }
         });
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(EditRequestFragment.this)
-                        .navigate(R.id.action_editRequestFragment_to_homeFragment);
+                // NavHostFragment.findNavController(EditRequestFragment.this)
+                //        .navigate(R.id.action_editRequestFragment_to_homeFragment);
                 //TODO: remove request info
+                return;
             }
         });
     }
+}
