@@ -30,7 +30,7 @@ public class RequestFragment extends Fragment {
 
     }
     @Override
-    protected void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         Button submitButton = (Button) view.findViewById(R.id.submitRequestButton);
@@ -43,8 +43,9 @@ public class RequestFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //TODO: update request obj
-                NavHostFragment.findNavController(RequestFragment.this)
-                        .navigate(R.id.action_requestFragment_to_homeFragment);
+                // NavHostFragment.findNavController(RequestFragment.this)
+                //        .navigate(R.id.action_requestFragment_to_homeFragment);
+                return;
             }
 
         });
@@ -52,8 +53,10 @@ public class RequestFragment extends Fragment {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(RequestFragment.this)
-                        .navigate(R.id.action_requestFragment_to_homeFragment);
+                // NavHostFragment.findNavController(RequestFragment.this)
+                //        .navigate(R.id.action_requestFragment_to_homeFragment);
+                return;
             }
         });
     }
+}

@@ -31,8 +31,8 @@ public class IncidentFragment extends Fragment {
 
     }
     @Override
-    protected void onViewCreate(@NonNull View view, Bundle savedInstanceState) {
-        super.onCreate(view, savedInstanceState);
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         Text incidentReport = view.findViewById(R.id.report_box);
         Button submitButton = view.findViewById(R.id.submitIncidentButton);
@@ -41,16 +41,19 @@ public class IncidentFragment extends Fragment {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(IncidentFragment.this)
-                        .navigate(R.id.action_incidentFragment_to_homeFragment);
+                // NavHostFragment.findNavController(IncidentFragment.this)
+                //        .navigate(R.id.action_incidentFragment_to_homeFragment);
+                return;
             }
         });
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(IncidentFragment.this)
-                        .navigate(R.id.action_incidentFragment_to_homeFragment);
+                // NavHostFragment.findNavController(IncidentFragment.this)
+                //        .navigate(R.id.action_incidentFragment_to_homeFragment);
+                return;
             }
         });
     }
+}

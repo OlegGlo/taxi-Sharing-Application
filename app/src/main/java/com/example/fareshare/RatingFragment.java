@@ -29,8 +29,8 @@ public class RatingFragment extends Fragment {
 
     }
     @Override
-    protected void onViewCreate(@NonNull View view, Bundle savedInstanceState) {
-        super.onCreate(view, savedInstanceState);
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         RatingBar ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
         Button submitButton = (Button) view.findViewById(R.id.submitRatingButton);
@@ -38,8 +38,9 @@ public class RatingFragment extends Fragment {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(RatingFragment.this)
-                        .navigate(R.id.action_ratingFragment_to_homeFragment);
+                // NavHostFragment.findNavController(RatingFragment.this)
+                //        .navigate(R.id.action_ratingFragment_to_homeFragment);
+                return;
             }
         });
     }
