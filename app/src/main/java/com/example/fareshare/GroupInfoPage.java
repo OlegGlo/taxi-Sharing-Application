@@ -34,7 +34,7 @@ public class GroupInfoPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(GroupInfoPage.this)
-                        .navigate(R.id.action_EditGroup_to_FirstFragment);
+                        .navigate(R.id.action_groupInfoPage_to_homeFragment);
             }
         });
 
@@ -42,7 +42,7 @@ public class GroupInfoPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(GroupInfoPage.this)
-                        .navigate(R.id.action_EditGroup_to_Groups);
+                        .navigate(R.id.action_groupInfoPage_to_groupsPage);
             }
         });
 
@@ -50,7 +50,7 @@ public class GroupInfoPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(GroupInfoPage.this)
-                        .navigate(R.id.action_EditGroup_to_FirstFragment);
+                        .navigate(R.id.action_groupInfoPage_to_accountFragment);
             }
         });
 
@@ -59,7 +59,7 @@ public class GroupInfoPage extends Fragment {
             public void onClick(View view) {
                 // saved these values but not sure how to get them to show on info page
                 NavHostFragment.findNavController(GroupInfoPage.this)
-                        .navigate(R.id.action_GroupInfo_to_EditGroup);
+                        .navigate(R.id.action_groupInfoPage_to_editGroupPage);
             }
         });
 

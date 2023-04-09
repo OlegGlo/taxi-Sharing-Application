@@ -44,7 +44,7 @@ public class EditGroupPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(EditGroupPage.this)
-                        .navigate(R.id.action_EditGroup_to_FirstFragment);
+                        .navigate(R.id.action_editGroupPage_to_homeFragment);
             }
         });
 
@@ -52,7 +52,7 @@ public class EditGroupPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(EditGroupPage.this)
-                        .navigate(R.id.action_EditGroup_to_Groups);
+                        .navigate(R.id.action_editGroupPage_to_groupsPage);
             }
         });
 
@@ -60,7 +60,7 @@ public class EditGroupPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(EditGroupPage.this)
-                        .navigate(R.id.action_EditGroup_to_FirstFragment);
+                        .navigate(R.id.action_editGroupPage_to_accountFragment);
             }
         });
 
@@ -72,7 +72,7 @@ public class EditGroupPage extends Fragment {
                 dAdd = destination_address.getText().toString();
                 // saved these values but not sure how to get them to show on info page
                 NavHostFragment.findNavController(EditGroupPage.this)
-                        .navigate(R.id.action_EditGroup_to_GroupInfo);
+                        .navigate(R.id.action_editGroupPage_to_groupInfoPage);
             }
         });
 
