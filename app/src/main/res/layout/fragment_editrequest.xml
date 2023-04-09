@@ -1,0 +1,112 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white"
+    tools:context=".EditrequestFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            android:padding="30dp">
+
+            <TextView
+                android:id="@+id/editCarpool_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Carpool"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edit_destination_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/fareShare_yellow"
+                android:hint="@string/destination_box"
+                android:shadowColor="@color/black"
+                android:textColorHint="@color/black"
+                android:padding="12dp"
+                android:inputType="textPostalAddress"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="40dp"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/edit_pickup_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/fareShare_yellow"
+                android:hint="@string/pickup_box"
+                android:shadowColor="@color/black"
+                android:textColorHint="@color/black"
+                android:padding="12dp"
+                android:inputType="textPostalAddress"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="40dp"
+                android:autofillHints="" />
+
+            <EditText
+                android:id="@+id/edit_pickupTime_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/fareShare_yellow"
+                android:hint="@text/pickupTime_box"
+                android:shadowColor="@color/black"
+                android:textColorHint="@color/black"
+                android:padding="12dp"
+                android:inputType="time"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:layout_marginTop="40dp"
+                android:autofillHints="" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp">
+
+                <Button
+                    android:id="@+id/submitEditRequestButton"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:text="Submit"
+                    android:backgroundTint="@color/fareShare_yellow"
+                    android:textColor="@color/black"
+                    app:cornerRadius="20dp"/>
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="@color/fareShare_yellow"
+                    android:text="Cancel Carpool"
+                    android:textColor="@color/black"
+                    app:cornerRadius="20dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
