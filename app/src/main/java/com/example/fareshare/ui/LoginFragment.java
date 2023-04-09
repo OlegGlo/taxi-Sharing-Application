@@ -1,4 +1,4 @@
-package com.example.fareshare;
+package com.example.fareshare.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,14 +7,19 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.fareshare.CustomerInfoViewModel;
+import com.example.fareshare.R;
+import com.example.fareshare.data.entities.CustomerIdentity;
 import com.example.fareshare.databinding.FragmentLoginBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 public class LoginFragment extends Fragment {
 
     private FragmentLoginBinding binding;
+    private CustomerInfoViewModel viewModel;
 
     @Override
     public View onCreateView(
@@ -30,15 +35,27 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        viewModel = new ViewModelProvider(getActivity()).get(CustomerInfoViewModel.class);
+
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(binding.emailUsername.getText().toString().equals("admin") && binding.password.getText().toString().equals("1234")) {
+                String email = binding.emailUsername.getText().toString();
+                String password = binding.password.getText().toString();
+                CustomerIdentity id = viewModel.getVerificationInfo(email);
+
+                if (email.equals("admin") && password.equals("1234")) {
+                    Snackbar.make(view, "Admin Login", Snackbar.LENGTH_SHORT).show();
+                    NavHostFragment.findNavController(LoginFragment.this)
+                            .navigate(R.id.action_loginFragment_to_authenticatorFragment);
+                } else if(id == null){
+                    Snackbar.make(view, "There is no account associated with that email.", Snackbar.LENGTH_SHORT).show();
+                } else if (email.equals(id.getEmail()) && password.equals(id.getPassword())) {
                     Snackbar.make(view, "Login Successful!", Snackbar.LENGTH_SHORT).show();
                     NavHostFragment.findNavController(LoginFragment.this)
                             .navigate(R.id.action_loginFragment_to_authenticatorFragment);
                 } else {
-                    Snackbar.make(view, "Login Failed!", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(view, "Incorrect password", Snackbar.LENGTH_SHORT).show();
                 }
             }
         });
