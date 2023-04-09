@@ -104,6 +104,8 @@
     <string name="carpool_end_page_fare_text">$X.XX</string>
     <string name="carpool_end_page_rate_button_text">Rate Passengers</string>
     <string name="carpool_end_page_report_button_text">Report Incident</string>
+    <string name="destination_box">Edit destination address</string>
+    <string name="pickup_box">Edit pickup address</string>
 
 
 </resources>
