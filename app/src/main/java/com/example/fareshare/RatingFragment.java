@@ -30,14 +30,10 @@ public class RatingFragment extends Fragment {
     }
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-<<<<<<< HEAD
-        super.onViewCreate(view, savedInstanceState);
-=======
         super.onViewCreated(view, savedInstanceState);
->>>>>>> origin/master
 
-        RatingBar ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
-        Button submitButton = (Button) view.findViewById(R.id.submitRatingButton);
+        RatingBar ratingBar = view.findViewById(R.id.ratingBar);
+        Button submitButton = view.findViewById(R.id.submitRatingButton);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override

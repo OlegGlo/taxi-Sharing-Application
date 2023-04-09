@@ -41,8 +41,8 @@ public class IncidentFragment extends Fragment {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // NavHostFragment.findNavController(IncidentFragment.this)
-                //        .navigate(R.id.action_incidentFragment_to_homeFragment);
+                NavHostFragment.findNavController(IncidentFragment.this)
+                       .navigate(R.id.action_incidentFragment_to_homeFragment);
                 return;
             }
         });
