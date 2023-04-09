@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/request_incoming_back_button"
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text="@string/request_incoming_back_text"
+                android:backgroundTint="@color/fareShare_black"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="100" />
+
+            <Button
+                android:id="@+id/request_incoming_next_button"
+                android:layout_width="72dp"
+                android:layout_height="48dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/fareShare_black"
+                android:text="@string/request_incoming_next_text"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/request_incoming_ppic_desc"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/request_incoming_name_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/request_incoming_name_text"
+            android:textSize="24dp"
+            android:textColor="@color/fareShare_black"/>
+
+        <TextView
+            android:id="@+id/request_incoming_rating_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/request_incoming_rating_text"
+            android:textSize="24dp"
+            android:textColor="@color/fareShare_black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="48dp">
+
+            <Button
+                android:id="@+id/request_incoming_accept_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text="@string/request_incoming_accept_text"
+                android:backgroundTint="@color/fareShare_yellow"
+                android:textColor="@color/black"
+                app:cornerRadius="20dp"/>
+
+            <Button
+                android:id="@+id/request_incoming_reject_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:text="@string/request_incoming_reject_text"
+                android:backgroundTint="@color/fareShare_yellow"
+                android:textColor="@color/black"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
