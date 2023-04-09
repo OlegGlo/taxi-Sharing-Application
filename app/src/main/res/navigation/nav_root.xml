@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.fareshare.ui.LoginFragment"
+        android:name="com.example.fareshare.ui.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/authenticatorFragment"
-        android:name="com.example.fareshare.ui.AuthenticatorFragment"
+        android:name="com.example.fareshare.ui.fragments.AuthenticatorFragment"
         android:label="fragment_authenticator"
         tools:layout="@layout/fragment_authenticator" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.example.fareshare.ui.RegistrationFragment"
+        android:name="com.example.fareshare.ui.fragments.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" >
         <action
