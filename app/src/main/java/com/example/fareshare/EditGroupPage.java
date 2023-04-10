@@ -15,12 +15,12 @@ import com.example.fareshare.databinding.EditGroupPageBinding;
 public class EditGroupPage extends Fragment {
 
     private EditGroupPageBinding binding;
-    EditText phone_number;
+    EditText emails;
     EditText pickup_address;
     EditText destination_address;
-    String pNum;
-    String pAdd;
-    String dAdd;
+    String emails_string;
+    String pickup_string;
+    String destination_string;
 
     @Override
     public View onCreateView(
@@ -36,43 +36,22 @@ public class EditGroupPage extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        phone_number = (EditText) view.findViewById(R.id.editTextPhone);
-        pickup_address = (EditText) view.findViewById(R.id.editTextPickupAddress);
-        destination_address = (EditText) view.findViewById(R.id.editTextDestinationAddress);
-
-        view.findViewById(R.id.homeFragment).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(EditGroupPage.this)
-                        .navigate(R.id.action_editGroupPage_to_homeFragment);
-            }
-        });
-
-        view.findViewById(R.id.groupsFragment).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(EditGroupPage.this)
-                        .navigate(R.id.action_editGroupPage_to_groupsPage);
-            }
-        });
-
-        view.findViewById(R.id.accountFragment).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(EditGroupPage.this)
-                        .navigate(R.id.action_editGroupPage_to_accountFragment);
-            }
-        });
+        emails = (EditText) view.findViewById(R.id.edit_emails);
+        pickup_address = (EditText) view.findViewById(R.id.edit_pickup_address);
+        destination_address = (EditText) view.findViewById(R.id.edit_destination_address);
+        emails.setText("get emails from DB");
+        pickup_address.setText("get pickup from DB");
+        destination_address.setText("get destination from DB");
 
         binding.buttonSaveChanges.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pNum = phone_number.getText().toString();
-                pAdd = pickup_address.getText().toString();
-                dAdd = destination_address.getText().toString();
-                // saved these values but not sure how to get them to show on info page
+                emails_string = emails.getText().toString();
+                pickup_string = pickup_address.getText().toString();
+                destination_string = destination_address.getText().toString();
+                //save to db
                 NavHostFragment.findNavController(EditGroupPage.this)
-                        .navigate(R.id.action_editGroupPage_to_groupInfoPage);
+                        .navigate(R.id.action_createGroupPage_to_groupInfoPage);
             }
         });
 

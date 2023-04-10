@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_offer"
+    app:startDestination="@id/offerCarpoolPage">
+
+    <fragment
+        android:id="@+id/offerCarpoolPage"
+        android:name="com.example.fareshare.OfferCarpoolPage"
+        android:label="offer_carpool_page"
+        tools:layout="@layout/offer_carpool_page" >
+        <action
+            android:id="@+id/action_offerCarpoolPage_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_offerCarpoolPage_to_offerWaitPage"
+            app:destination="@id/offerWaitPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/offerWaitPage"
+        android:name="com.example.fareshare.OfferWaitPage"
+        android:label="offer_wait_page"
+        tools:layout="@layout/offer_wait_page" >
+        <action
+            android:id="@+id/action_offerWaitPage_to_requestIncomingPage"
+            app:destination="@id/requestIncomingPage" />
+        <action
+            android:id="@+id/action_offerWaitPage_to_carpoolRidePage"
+            app:destination="@id/carpoolRidePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestIncomingPage"
+        android:name="com.example.fareshare.RequestIncomingPage"
+        android:label="request_incoming_page"
+        tools:layout="@layout/request_incoming_page" >
+        <action
+            android:id="@+id/action_requestIncomingPage_to_offerWaitPage"
+            app:destination="@id/offerWaitPage" />
+        <action
+            android:id="@+id/action_requestIncomingPage_to_carpoolRidePage"
+            app:destination="@id/carpoolRidePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/editGroupPage"
+        android:name="com.example.fareshare.EditGroupPage"
+        android:label="edit_group_page"
+        tools:layout="@layout/edit_group_page" >
+        <action
+            android:id="@+id/action_editGroupPage_to_groupInfoPage"
+            app:destination="@id/groupInfoPage" />
+        <action
+            android:id="@+id/action_editGroupPage_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_editGroupPage_to_groupsPage"
+            app:destination="@id/groupsPage" />
+        <action
+            android:id="@+id/action_editGroupPage_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
