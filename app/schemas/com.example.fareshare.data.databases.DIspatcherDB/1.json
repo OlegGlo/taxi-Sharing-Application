@@ -1,0 +1,218 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "358e7ac73c0ff181ab66107041215022",
+    "entities": [
+      {
+        "tableName": "Carpool",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`carpool_id` INTEGER, `num_passengers` INTEGER NOT NULL, `passengers` TEXT, `destination` TEXT, `taxi_id` TEXT, `ongoing` INTEGER NOT NULL, PRIMARY KEY(`carpool_id`))",
+        "fields": [
+          {
+            "fieldPath": "carpoolID",
+            "columnName": "carpool_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "numPassengers",
+            "columnName": "num_passengers",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "passengers",
+            "columnName": "passengers",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "destination",
+            "columnName": "destination",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "taxiID",
+            "columnName": "taxi_id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ongoing",
+            "columnName": "ongoing",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "carpool_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Offer",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`offer_id` INTEGER PRIMARY KEY AUTOINCREMENT, `offerer` TEXT, `max_passengers` INTEGER NOT NULL, `open` INTEGER NOT NULL, `street` TEXT, `city` TEXT, `province` TEXT, `postal_code` TEXT, `country` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "offerID",
+            "columnName": "offer_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "offerer",
+            "columnName": "offerer",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "maxPassengers",
+            "columnName": "max_passengers",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "open",
+            "columnName": "open",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "destination.street",
+            "columnName": "street",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "destination.city",
+            "columnName": "city",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "destination.province",
+            "columnName": "province",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "destination.postalCode",
+            "columnName": "postal_code",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "destination.country",
+            "columnName": "country",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "offer_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Request",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`request_id` INTEGER, `filter` TEXT, `pickup_street` TEXT, `pickup_city` TEXT, `pickup_province` TEXT, `pickup_postal_code` TEXT, `pickup_country` TEXT, `destination_street` TEXT, `destination_city` TEXT, `destination_province` TEXT, `destination_postal_code` TEXT, `destination_country` TEXT, PRIMARY KEY(`request_id`))",
+        "fields": [
+          {
+            "fieldPath": "requestID",
+            "columnName": "request_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "filter",
+            "columnName": "filter",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pickup.street",
+            "columnName": "pickup_street",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pickup.city",
+            "columnName": "pickup_city",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pickup.province",
+            "columnName": "pickup_province",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pickup.postalCode",
+            "columnName": "pickup_postal_code",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pickup.country",
+            "columnName": "pickup_country",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "destination.street",
+            "columnName": "destination_street",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "destination.city",
+            "columnName": "destination_city",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "destination.province",
+            "columnName": "destination_province",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "destination.postalCode",
+            "columnName": "destination_postal_code",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "destination.country",
+            "columnName": "destination_country",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "request_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '358e7ac73c0ff181ab66107041215022')"
+    ]
+  }
+}
