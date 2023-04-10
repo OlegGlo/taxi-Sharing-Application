@@ -23,7 +23,7 @@ public class RequestActivity extends AppCompatActivity {
         binding = ActivityRequestBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        navController = Navigation.findNavController(this, R.id.nav_request);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_request);
     }
 
 

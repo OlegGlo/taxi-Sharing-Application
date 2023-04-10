@@ -10,30 +10,36 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.Discouraged;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.NavHostController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.fareshare.data.entities.Request;
 import com.example.fareshare.databinding.FragmentRequestBinding;
+import com.example.fareshare.viewmodels.CustomerInfoViewModel;
+import com.example.fareshare.viewmodels.DispatcherViewModel;
 
 import org.w3c.dom.Text;
 
 public class RequestFragment extends Fragment {
 
     private FragmentRequestBinding binding;
-    private NavHostFragment navHostFragment;
+    private DispatcherViewModel dispatcherViewModel;
+    //private NavHostFragment navHostFragment;
 
 
-    public RequestFragment() {
-        // Blank constructor required?
-    }
+//    public RequestFragment() {
+//        // Blank constructor required?
+//    }
 
-    public static RequestFragment newInstance() {
-        RequestFragment fragment = new RequestFragment();
-        return fragment;
-    }
+//    public static RequestFragment newInstance() {
+//        RequestFragment fragment = new RequestFragment();
+//        return fragment;
+//    }
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -49,11 +55,13 @@ public class RequestFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button submitButton = (Button) view.findViewById(R.id.submitRequestButton);
-        Button cancelButton = (Button) view.findViewById(R.id.cancelButton);
-        EditText destination_box = view.findViewById(R.id.destination_box);
-        EditText pickup_box = view.findViewById(R.id.pickup_box);
-        EditText pickupTime_box = view.findViewById(R.id.pickupTime_box);
+        dispatcherViewModel = new ViewModelProvider(requireActivity()).get(DispatcherViewModel.class);
+
+        Button submitButton = binding.submitRequestButton;
+        Button cancelButton = binding.cancelButton;
+        EditText destination_box = binding.destinationBox;
+        EditText pickup_box = binding.pickupBox;
+        EditText pickupTime_box = binding.pickupTimeBox;
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,8 +71,10 @@ public class RequestFragment extends Fragment {
                 //        .navigate(R.id.action_requestFragment_to_homeFragment);
                 String destination = destination_box.getText().toString();
                 String pickup = pickup_box.getText().toString();
+                //TODO: Current request object doesn't have time, I just assumed ASAP, can be added though
                 String pickupTime = pickupTime_box.getText().toString();
 
+                //Request request = new Request()
 
             }
 
@@ -73,9 +83,7 @@ public class RequestFragment extends Fragment {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // NavHostFragment.findNavController(RequestFragment.this)
-                //        .navigate(R.id.action_requestFragment_to_homeFragment);
-                return;
+                 getActivity().finish();
             }
         });
     }
