@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.fareshare.Globals;
 import com.example.fareshare.viewmodels.CustomerInfoViewModel;
 import com.example.fareshare.R;
 import com.example.fareshare.data.entities.CustomerIdentity;
@@ -52,6 +53,7 @@ public class LoginFragment extends Fragment {
                     Snackbar.make(view, "There is no account associated with that email.", Snackbar.LENGTH_SHORT).show();
                 } else if (email.equals(id.getEmail()) && password.equals(id.getPassword())) {
                     Snackbar.make(view, "Login Successful!", Snackbar.LENGTH_SHORT).show();
+                    ((Globals) getActivity().getApplication()).setCustomerID(email);
                     NavHostFragment.findNavController(LoginFragment.this)
                             .navigate(R.id.action_loginFragment_to_authenticatorFragment);
                 } else {
