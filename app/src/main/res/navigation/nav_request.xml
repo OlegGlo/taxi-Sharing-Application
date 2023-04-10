@@ -3,11 +3,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_request"
-    app:startDestination="@id/requestFragment">
+    app:startDestination="@id/requestWaitFragment">
 
     <fragment
         android:id="@+id/requestFragment"
         android:name="com.example.fareshare.RequestFragment"
         android:label="fragment_request"
-        tools:layout="@layout/fragment_request" />
+        tools:layout="@layout/fragment_request">
+        <action
+            android:id="@+id/action_requestFragment_to_requestWaitFragment"
+            app:destination="@id/requestWaitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editRequestFragment"
+        android:name="com.example.fareshare.EditRequestFragment"
+        android:label="fragment_editRequest"
+        tools:layout="@layout/fragment_edit_request" >
+        <action
+            android:id="@+id/action_editRequestFragment_to_requestWaitFragment"
+            app:destination="@id/requestWaitFragment" />
+    </fragment>
+    <fragment android:id="@+id/requestWaitFragment" >
+        <action
+            android:id="@+id/action_requestWaitFragment_to_editRequestFragment"
+            app:destination="@id/editRequestFragment" />
+        <action
+            android:id="@+id/action_requestWaitFragment_to_requestRejectedFragment"
+            app:destination="@id/requestRejectedFragment" />
+        <action
+            android:id="@+id/action_requestWaitFragment_to_requestAcceptedFragment"
+            app:destination="@id/requestAcceptedFragment" />
+    </fragment>
+    <fragment android:id="@+id/requestAcceptedFragment" >
+        <action
+            android:id="@+id/action_requestAcceptedFragment_to_requestFragment"
+            app:destination="@id/requestFragment" />
+    </fragment>
+    <fragment android:id="@+id/requestRejectedFragment" >
+        <action
+            android:id="@+id/action_requestRejectedFragment_to_requestFragment"
+            app:destination="@id/requestFragment" />
+    </fragment>
+
+    <!--    <fragment-->
+<!--        android:id="@+id/"-->
+<!--        android:name="com.example.fareshare."-->
+<!--        android:label="fragment_"-->
+<!--        tools:layout="@layout/" />-->
+
+
 </navigation>
