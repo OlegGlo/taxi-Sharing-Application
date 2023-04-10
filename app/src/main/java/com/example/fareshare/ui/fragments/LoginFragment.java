@@ -12,7 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fareshare.viewmodels.CustomerInfoViewModel;
 import com.example.fareshare.R;
-import com.example.fareshare.data.entities.wrappers.CustomerIdentity;
+import com.example.fareshare.data.entities.CustomerIdentity;
 import com.example.fareshare.databinding.FragmentLoginBinding;
 import com.google.android.material.snackbar.Snackbar;
 

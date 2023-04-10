@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData;
 
 import com.example.fareshare.data.CustomerInfoRepository;
 import com.example.fareshare.data.entities.CarpoolGroup;
-import com.example.fareshare.data.entities.wrappers.CustomerIdentity;
+import com.example.fareshare.data.entities.CustomerIdentity;
 import com.example.fareshare.data.entities.CustomerInfo;
 
 import java.util.List;
@@ -41,6 +41,18 @@ public class CustomerInfoViewModel extends AndroidViewModel {
 
     public CustomerIdentity getVerificationInfo(String email) {
         return repository.getVerificationInfo(email);
+    }
+
+    public long addCustomerID(CustomerIdentity customerIdentity) {
+        return repository.addCustomerID(customerIdentity);
+    }
+
+    public void delete(CustomerIdentity customerIdentity) {
+        repository.delete(customerIdentity);
+    }
+
+    public void update(CustomerIdentity customerIdentity) {
+        repository.update(customerIdentity);
     }
 
     public CustomerInfo getByID(Long customerID) {
