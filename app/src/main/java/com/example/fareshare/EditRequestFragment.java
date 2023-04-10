@@ -6,18 +6,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fareshare.databinding.FragmentEditRequestBinding;
+import com.example.fareshare.viewmodels.DispatcherViewModel;
+import com.example.fareshare.viewmodels.RequestViewModel;
 
 import org.w3c.dom.Text;
 
 public class EditRequestFragment extends Fragment {
 
     private FragmentEditRequestBinding binding;
+    private DispatcherViewModel dispatcherViewModel;
+    private RequestViewModel requestViewModel;
 
     @Override
     public View onCreateView(
@@ -27,19 +33,18 @@ public class EditRequestFragment extends Fragment {
 
         binding = FragmentEditRequestBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button submitButton = (Button) view.findViewById(R.id.submitEditRequestButton);
-        Button cancelButton = (Button) view.findViewById(R.id.cancelButton);
-        Text destination = view.findViewById(R.id.edit_destination_box);
-        Text pickup = view.findViewById(R.id.edit_pickup_box);
-        Text pickupTime = view.findViewById(R.id.edit_pickupTime_box);
-
+        dispatcherViewModel = new ViewModelProvider(requireActivity()).get(DispatcherViewModel.class);
+        Button submitButton = binding.submitEditRequestButton;
+        Button cancelButton = binding.cancelButton;
+        EditText destination_box = binding.editDestinationBox;
+        EditText pickup_box = binding.editPickupBox;
+        EditText pickupTime_box = binding.editPickupTimeBox;
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +52,6 @@ public class EditRequestFragment extends Fragment {
                 //TODO: Update Request Obj
                 // NavHostFragment.findNavController(EditRequestFragment.this)
                 //        .navigate(R.id.action_editRequestFragment_to_homeFragment);
-                return;
             }
         });
 
@@ -57,7 +61,6 @@ public class EditRequestFragment extends Fragment {
                 // NavHostFragment.findNavController(EditRequestFragment.this)
                 //        .navigate(R.id.action_editRequestFragment_to_homeFragment);
                 //TODO: remove request info
-                return;
             }
         });
     }

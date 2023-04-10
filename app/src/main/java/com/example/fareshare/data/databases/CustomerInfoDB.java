@@ -1,29 +1,31 @@
-package com.example.fareshare.data;
+package com.example.fareshare.data.databases;
 
 import android.content.Context;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
 import com.example.fareshare.data.daos.CustomerInfoDao;
 
 import com.example.fareshare.data.entities.CarpoolGroup;
+import com.example.fareshare.data.entities.Converters;
+import com.example.fareshare.data.entities.CustomerIdentity;
 import com.example.fareshare.data.entities.CustomerInfo;
-import com.example.fareshare.data.entities.GroupMemberCrossRef;
 
 
 @Database(
-        version = 2,
+        version = 5,
         entities = {
             CustomerInfo.class,
-            CarpoolGroup.class,
-            GroupMemberCrossRef.class}
+            CustomerIdentity.class,
+            CarpoolGroup.class}
         )
+@TypeConverters(Converters.class)
 public abstract class CustomerInfoDB extends RoomDatabase {
 
     public abstract CustomerInfoDao customerInfoDao();
-
     public static final String NAME = "CustomerInfoDB";
 
     public static CustomerInfoDB INSTANCE;
