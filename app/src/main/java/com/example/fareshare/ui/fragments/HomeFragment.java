@@ -9,10 +9,17 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+<<<<<<< HEAD
+import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.fareshare.EditGroupPage;
+import com.example.fareshare.R;
+=======
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.fareshare.Globals;
+>>>>>>> 6efdea8000b42a728fa0e34cea1d07ad92d0515c
 import com.example.fareshare.databinding.FragmentHomeBinding;
 
 import com.example.fareshare.ui.activities.RequestActivity;
@@ -56,6 +63,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Started Carpool Offer!", Snackbar.LENGTH_SHORT).show();
+                NavHostFragment.findNavController(HomeFragment.this)
+                        .navigate(R.id.action_homeFragment_to_offerCarpoolPage);
             }
         });
         binding.requestButton.setOnClickListener(new View.OnClickListener() {
