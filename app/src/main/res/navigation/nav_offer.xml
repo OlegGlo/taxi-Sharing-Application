@@ -41,4 +41,10 @@
 <!--            android:id="@+id/action_requestIncomingPage_to_carpoolRidePage"-->
 <!--            app:destination="@id/carpoolRidePage" />-->
     </fragment>
+    <fragment
+        android:id="@+id/carpoolRidePage"
+        android:name="com.example.fareshare.GroupsPage"
+        android:label="carpool_ride_page"
+        tools:layout="@layout/carpool_ride_page" >
+    </fragment>
 </navigation>
