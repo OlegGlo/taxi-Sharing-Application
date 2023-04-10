@@ -5,9 +5,10 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.fareshare.data.entities.CarpoolGroup;
-import com.example.fareshare.data.entities.wrappers.CustomerIdentity;
+import com.example.fareshare.data.entities.CustomerIdentity;
 import com.example.fareshare.data.entities.CustomerInfo;
 
 import java.util.List;
@@ -15,12 +16,21 @@ import java.util.List;
 @Dao
 public interface CustomerInfoDao {
 
+    //IDENTITY STUFF
+    @Insert
+    long addCustomerID(CustomerIdentity customerIdentity);
+    @Delete
+    void delete(CustomerIdentity customerIdentity);
+
+    @Query("SELECT * FROM Customer_Identity WHERE email LIKE :email")
+    CustomerIdentity getID(String email);
+
+    @Update
+    void update(CustomerIdentity customerIdentity);
+
     //CUSTOMER STUFF
     @Query("SELECT * FROM Customers")
     LiveData<List<CustomerInfo>> getAllCustomers();
-
-    @Query("SELECT email, password FROM Customers WHERE email LIKE :customerEmail")
-    CustomerIdentity getVerificationInfo(String customerEmail);
 
     @Query("SELECT * FROM CUSTOMERS WHERE customer_id LIKE :customerID")
     CustomerInfo getByID(Long customerID);

@@ -106,20 +106,62 @@
                 android:layout_marginTop="40dp"
                 android:autofillHints="" />
 
-            <EditText
-                android:id="@+id/register_birthday_box"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:autofillHints=""
-                android:backgroundTint="@color/fareShare_yellow"
-                android:hint="@string/register_date_of_birth_hint"
-                android:inputType="date"
-                android:padding="12dp"
-                android:shadowColor="@color/black"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background"
-                android:textColorHint="@color/black" />
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/birthday_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:autofillHints=""
+                    android:backgroundTint="@color/fareShare_yellow"
+                    android:hint="@string/birthday_day_hint"
+                    android:inputType="number"
+                    android:padding="12dp"
+                    android:shadowColor="@color/black"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="@color/cardview_dark_background"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/birthday_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:autofillHints=""
+                    android:backgroundTint="@color/fareShare_yellow"
+                    android:hint="@string/birthday_month_hint"
+                    android:inputType="number"
+                    android:padding="12dp"
+                    android:shadowColor="@color/black"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="@color/cardview_dark_background"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/birthday_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_weight="1"
+                    android:autofillHints=""
+                    android:backgroundTint="@color/fareShare_yellow"
+                    android:hint="@string/birthday_year_hint"
+                    android:inputType="number"
+                    android:padding="12dp"
+                    android:shadowColor="@color/black"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="@color/cardview_dark_background"
+                    android:textColorHint="@color/black" />
+
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/phonenumber_box"
@@ -130,7 +172,7 @@
                 android:shadowColor="@color/black"
                 android:textColorHint="@color/black"
                 android:padding="12dp"
-                android:inputType="text|phone"
+                android:inputType="number"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
                 android:layout_marginTop="40dp"
