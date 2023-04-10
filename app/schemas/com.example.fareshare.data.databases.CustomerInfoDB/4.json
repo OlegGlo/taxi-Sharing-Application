@@ -1,8 +1,8 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 2,
-    "identityHash": "56cd3a2c3972b4640e8603f4e74bf295",
+    "version": 4,
+    "identityHash": "3b618c60339c0d427d520a5474685482",
     "entities": [
       {
         "tableName": "Customers",
@@ -143,72 +143,12 @@
         },
         "indices": [],
         "foreignKeys": []
-      },
-      {
-        "tableName": "GroupMemberCrossRef",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`group_id` INTEGER NOT NULL, `customer_id` INTEGER NOT NULL, PRIMARY KEY(`group_id`, `customer_id`), FOREIGN KEY(`group_id`) REFERENCES `CarpoolGroup`(`group_id`) ON UPDATE CASCADE ON DELETE CASCADE , FOREIGN KEY(`customer_id`) REFERENCES `Customers`(`customer_id`) ON UPDATE CASCADE ON DELETE CASCADE )",
-        "fields": [
-          {
-            "fieldPath": "groupID",
-            "columnName": "group_id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "customerID",
-            "columnName": "customer_id",
-            "affinity": "INTEGER",
-            "notNull": true
-          }
-        ],
-        "primaryKey": {
-          "autoGenerate": false,
-          "columnNames": [
-            "group_id",
-            "customer_id"
-          ]
-        },
-        "indices": [
-          {
-            "name": "index_GroupMemberCrossRef_customer_id",
-            "unique": false,
-            "columnNames": [
-              "customer_id"
-            ],
-            "orders": [],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_GroupMemberCrossRef_customer_id` ON `${TABLE_NAME}` (`customer_id`)"
-          }
-        ],
-        "foreignKeys": [
-          {
-            "table": "CarpoolGroup",
-            "onDelete": "CASCADE",
-            "onUpdate": "CASCADE",
-            "columns": [
-              "group_id"
-            ],
-            "referencedColumns": [
-              "group_id"
-            ]
-          },
-          {
-            "table": "Customers",
-            "onDelete": "CASCADE",
-            "onUpdate": "CASCADE",
-            "columns": [
-              "customer_id"
-            ],
-            "referencedColumns": [
-              "customer_id"
-            ]
-          }
-        ]
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '56cd3a2c3972b4640e8603f4e74bf295')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3b618c60339c0d427d520a5474685482')"
     ]
   }
 }

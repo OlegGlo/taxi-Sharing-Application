@@ -16,7 +16,6 @@ public class Converters {
         Type listType = new TypeToken<ArrayList<CustomerInfo>>() {}.getType();
         return new Gson().fromJson(value, listType);
     }
-
     @TypeConverter
     public static String fromArrayList(ArrayList<CustomerInfo> list) {
         Gson gson = new Gson();

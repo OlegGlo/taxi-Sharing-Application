@@ -1,12 +1,12 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 2,
-    "identityHash": "56cd3a2c3972b4640e8603f4e74bf295",
+    "version": 5,
+    "identityHash": "659001c205ba3f8a3390e9045a1558b5",
     "entities": [
       {
         "tableName": "Customers",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customer_id` INTEGER NOT NULL, `email` TEXT NOT NULL, `password` TEXT, `first_name` TEXT, `last_name` TEXT, `phone_number` TEXT NOT NULL, `ref_profile_picture` TEXT, `rating` REAL NOT NULL, `street` TEXT, `city` TEXT, `province` TEXT, `postal_code` TEXT, `country` TEXT, PRIMARY KEY(`customer_id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`customer_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `email` TEXT NOT NULL, `first_name` TEXT, `last_name` TEXT, `birthday` TEXT, `phone_number` TEXT NOT NULL, `ref_profile_picture` TEXT, `rating` REAL NOT NULL, `street` TEXT, `city` TEXT, `province` TEXT, `postal_code` TEXT, `country` TEXT)",
         "fields": [
           {
             "fieldPath": "customerID",
@@ -21,12 +21,6 @@
             "notNull": true
           },
           {
-            "fieldPath": "password",
-            "columnName": "password",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
             "fieldPath": "firstName",
             "columnName": "first_name",
             "affinity": "TEXT",
@@ -35,6 +29,12 @@
           {
             "fieldPath": "lastName",
             "columnName": "last_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "birthday",
+            "columnName": "birthday",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -88,7 +88,7 @@
           }
         ],
         "primaryKey": {
-          "autoGenerate": false,
+          "autoGenerate": true,
           "columnNames": [
             "customer_id"
           ]
@@ -102,9 +102,56 @@
             ],
             "orders": [],
             "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Customers_phone_number` ON `${TABLE_NAME}` (`phone_number`)"
+          },
+          {
+            "name": "index_Customers_email",
+            "unique": true,
+            "columnNames": [
+              "email"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Customers_email` ON `${TABLE_NAME}` (`email`)"
           }
         ],
         "foreignKeys": []
+      },
+      {
+        "tableName": "Customer_Identity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`email` TEXT NOT NULL, `password` TEXT, PRIMARY KEY(`email`), FOREIGN KEY(`email`) REFERENCES `Customers`(`email`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "email"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Customers",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "email"
+            ],
+            "referencedColumns": [
+              "email"
+            ]
+          }
+        ]
       },
       {
         "tableName": "CarpoolGroup",
@@ -143,72 +190,12 @@
         },
         "indices": [],
         "foreignKeys": []
-      },
-      {
-        "tableName": "GroupMemberCrossRef",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`group_id` INTEGER NOT NULL, `customer_id` INTEGER NOT NULL, PRIMARY KEY(`group_id`, `customer_id`), FOREIGN KEY(`group_id`) REFERENCES `CarpoolGroup`(`group_id`) ON UPDATE CASCADE ON DELETE CASCADE , FOREIGN KEY(`customer_id`) REFERENCES `Customers`(`customer_id`) ON UPDATE CASCADE ON DELETE CASCADE )",
-        "fields": [
-          {
-            "fieldPath": "groupID",
-            "columnName": "group_id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "customerID",
-            "columnName": "customer_id",
-            "affinity": "INTEGER",
-            "notNull": true
-          }
-        ],
-        "primaryKey": {
-          "autoGenerate": false,
-          "columnNames": [
-            "group_id",
-            "customer_id"
-          ]
-        },
-        "indices": [
-          {
-            "name": "index_GroupMemberCrossRef_customer_id",
-            "unique": false,
-            "columnNames": [
-              "customer_id"
-            ],
-            "orders": [],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_GroupMemberCrossRef_customer_id` ON `${TABLE_NAME}` (`customer_id`)"
-          }
-        ],
-        "foreignKeys": [
-          {
-            "table": "CarpoolGroup",
-            "onDelete": "CASCADE",
-            "onUpdate": "CASCADE",
-            "columns": [
-              "group_id"
-            ],
-            "referencedColumns": [
-              "group_id"
-            ]
-          },
-          {
-            "table": "Customers",
-            "onDelete": "CASCADE",
-            "onUpdate": "CASCADE",
-            "columns": [
-              "customer_id"
-            ],
-            "referencedColumns": [
-              "customer_id"
-            ]
-          }
-        ]
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '56cd3a2c3972b4640e8603f4e74bf295')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '659001c205ba3f8a3390e9045a1558b5')"
     ]
   }
 }
