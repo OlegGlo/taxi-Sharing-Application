@@ -17,5 +17,6 @@
         android:label="@string/registration_page_title"
         tools:layout="@layout/fragment_profile" />
     <include app:graph="@navigation/nav_group" />
+    <include app:graph="@navigation/nav_incident" />
     <include app:graph="@navigation/nav_request" />
 </navigation>
