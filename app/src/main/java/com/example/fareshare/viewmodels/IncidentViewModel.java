@@ -6,7 +6,6 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.fareshare.data.IncidentRepository;
-import com.example.fareshare.data.entities.CarpoolGroup;
 import com.example.fareshare.data.entities.Incident;
 
 import java.util.List;

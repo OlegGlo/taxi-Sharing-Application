@@ -1,24 +1,19 @@
-package com.example.fareshare;
+package com.example.fareshare.ui.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fareshare.viewmodels.CustomerInfoViewModel;
 import com.example.fareshare.viewmodels.IncidentViewModel;
 import com.example.fareshare.R;
 import com.example.fareshare.data.entities.Incident;
 import com.example.fareshare.databinding.FragmentIncidentBinding;
-import com.google.android.material.snackbar.Snackbar;
-
-import org.w3c.dom.Text;
 
 public class IncidentFragment extends Fragment {
 
@@ -40,7 +35,7 @@ public class IncidentFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        viewModel = new ViewModelProvider(getActivity()).get(IncidentViewModel.class);
+        viewModel = new ViewModelProvider().get(IncidentViewModel.class);
         binding.submitIncidentButton.setOnClickListener(new View.OnClickListener() {
 
             @Override

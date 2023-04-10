@@ -13,7 +13,6 @@ import java.util.List;
 @Dao
 public interface IncidentDao {
 
-    //CUSTOMER STUFF
     @Query("SELECT * FROM Incidents")
     LiveData<List<Incident>> getAllIncidents();
 
