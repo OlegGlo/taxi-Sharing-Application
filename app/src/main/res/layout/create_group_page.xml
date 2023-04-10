@@ -6,105 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".CreateGroupPage">
 
-    <TextView
-        android:id="@+id/textview_enter_phone"
+    <Button
+        android:id="@+id/button_create_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/phone_number_prompt"
+        android:layout_marginBottom="108dp"
+        android:text="@string/create_group"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/group_emails"
+        android:layout_width="286dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="116dp"
+        android:ems="10"
+        android:hint="Enter group members' emails"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textview_enter_destination"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/destination_prompt"
-        app:layout_constraintBottom_toTopOf="@id/button_create_group"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77" />
-
-    <TextView
-        android:id="@+id/textview_enter_pickup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/pickup_prompt"
-        app:layout_constraintBottom_toTopOf="@id/button_create_group"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.476" />
-
-    <Button
-        android:id="@+id/button_create_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/create_group"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_enter_phone"
-        app:layout_constraintVertical_bias="0.679" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_create_group"
-        app:layout_constraintVertical_bias="0.99"
-        app:menu="@menu/bottom_nav" >
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
     <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:id="@+id/group_leader_destination_address"
+        android:layout_width="259dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="64dp"
         android:ems="10"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_enter_phone" />
-
-    <EditText
-        android:id="@+id/editTextDestinationAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
+        android:hint="Enter destination address"
         android:inputType="textPostalAddress"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_enter_destination" />
+        app:layout_constraintTop_toBottomOf="@+id/group_leader_pickup_address" />
 
     <EditText
-        android:id="@+id/editTextPickupAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:id="@+id/group_leader_pickup_address"
+        android:layout_width="239dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="64dp"
         android:ems="10"
+        android:hint="Enter pickup address"
         android:inputType="textPostalAddress"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_enter_pickup" />
+        app:layout_constraintTop_toBottomOf="@+id/group_emails" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
