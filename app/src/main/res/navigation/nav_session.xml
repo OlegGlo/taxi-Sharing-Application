@@ -10,11 +10,38 @@
         android:name="com.example.fareshare.ui.fragments.HomeFragment"
         android:label="@string/title_activity_home"
         tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_groupsPage"
+            app:destination="@id/groupsPage" />
+        <action
+            android:id="@+id/action_homeFragment_to_offerCarpoolPage"
+            app:destination="@id/offerCarpoolPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/offerCarpoolPage"
+        android:name="com.example.fareshare.OfferCarpoolPage"
+        android:label="Offer Carpool"
+        tools:layout="@layout/offer_carpool_page" >
+        <action
+            android:id="@+id/action_offerCarpoolPage_to_scanPage"
+            app:destination="@id/scanPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanPage"
+        android:name="com.example.fareshare.ScanPage"
+        android:label="Scanner"
+        tools:layout="@layout/fragment_scan_page" >
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.fareshare.ui.fragments.ProfileFragment"
         android:label="@string/registration_page_title"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+    android:id="@+id/groupsPage"
+    android:name="com.example.fareshare.GroupsPage"
+    android:label="Groups"
+    tools:layout="@layout/groups_page" />
     <include app:graph="@navigation/nav_group" />
+    <include app:graph="@navigation/nav_offer" />
 </navigation>

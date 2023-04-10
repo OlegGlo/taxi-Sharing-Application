@@ -7,7 +7,10 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.fareshare.EditGroupPage;
+import com.example.fareshare.R;
 import com.example.fareshare.databinding.FragmentHomeBinding;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -33,6 +36,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Started Carpool Offer!", Snackbar.LENGTH_SHORT).show();
+                NavHostFragment.findNavController(HomeFragment.this)
+                        .navigate(R.id.action_homeFragment_to_offerCarpoolPage);
             }
         });
         binding.requestButton.setOnClickListener(new View.OnClickListener() {
