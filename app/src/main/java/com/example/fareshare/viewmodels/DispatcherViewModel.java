@@ -16,8 +16,6 @@ import java.util.List;
 public class DispatcherViewModel extends AndroidViewModel {
 
     DispatcherRepository repository;
-
-    //TODO: Group stuff
     LiveData<List<Offer>> offerList;
     LiveData<List<Request>> requestList;
 
@@ -27,6 +25,8 @@ public class DispatcherViewModel extends AndroidViewModel {
         offerList = repository.getOffers();
         requestList = repository.getRequests();
     }
+
+
 
 
 
