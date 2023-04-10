@@ -1,24 +1,30 @@
 package com.example.fareshare;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RatingBar;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.fareshare.viewmodels.CustomerInfoViewModel;
+import com.example.fareshare.viewmodels.IncidentViewModel;
+import com.example.fareshare.R;
+import com.example.fareshare.data.entities.Incident;
 import com.example.fareshare.databinding.FragmentIncidentBinding;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.w3c.dom.Text;
 
 public class IncidentFragment extends Fragment {
 
     private FragmentIncidentBinding binding;
+
+    private IncidentViewModel viewModel;
 
     @Override
     public View onCreateView(
@@ -34,25 +40,29 @@ public class IncidentFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Text incidentReport = view.findViewById(R.id.report_box);
-        Button submitButton = view.findViewById(R.id.submitIncidentButton);
-        Button cancelButton = view.findViewById(R.id.cancelButton);
+        viewModel = new ViewModelProvider(getActivity()).get(IncidentViewModel.class);
+        binding.submitIncidentButton.setOnClickListener(new View.OnClickListener() {
 
-        submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Incident incident = new Incident(
+                        binding.incidentEmailBox.getText().toString(),
+                        binding.reportBox.getText().toString());
+
+                try {
+                    viewModel.insertIncident(incident);
+                } catch (Exception e) {return;}
+
                 NavHostFragment.findNavController(IncidentFragment.this)
                        .navigate(R.id.action_incidentFragment_to_homeFragment);
-                return;
             }
         });
 
-        cancelButton.setOnClickListener(new View.OnClickListener() {
+        binding.cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(IncidentFragment.this)
                         .navigate(R.id.action_incidentFragment_to_homeFragment);
-                return;
             }
         });
     }
