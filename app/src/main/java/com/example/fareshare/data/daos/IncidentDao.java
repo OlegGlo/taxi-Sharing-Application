@@ -19,7 +19,7 @@ public interface IncidentDao {
     @Query("SELECT * FROM INCIDENTS WHERE incident_id LIKE :incidentID")
     Incident getByIncidentID(String incidentID);
     @Insert(entity = Incident.class)
-    long addIncident(Incident incident) throws Exception;
+    long addIncident(Incident incident);
 
     @Delete
     void delete(Incident incident);

@@ -22,8 +22,6 @@ public class Incident {
     @ColumnInfo(name = "report")
     private String report;
 
-    public Incident(){}
-
     @Ignore
     public Incident(@NonNull String email, String report) {
         this.email = email;
@@ -46,5 +44,9 @@ public class Incident {
         this.email = email;
     }
 
-    public String getIncidentID() {return incidentID;}
+    public String getIncidentID() { return incidentID; }
+
+    public void setIncidentID(String incidentID) {
+        this.incidentID = incidentID;
+    }
 }

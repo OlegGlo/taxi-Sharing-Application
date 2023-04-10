@@ -14,7 +14,7 @@ import com.example.fareshare.data.entities.Converters;
 
 
 @Database(
-        version = 4,
+        version = 3,
         entities = {
                 Incident.class
         }
