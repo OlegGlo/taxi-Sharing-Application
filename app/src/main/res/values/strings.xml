@@ -113,6 +113,8 @@
     <string name="request_rejected_back_button_text">BACK</string>
     <string name="request_rejected_title_text">Your Request was Rejected</string>
     <string name="request_rejected_cancel_button_text">CANCEL</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

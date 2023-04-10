@@ -51,7 +51,8 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 // Snackbar.make(view, "Started Carpool Request!", Snackbar.LENGTH_SHORT).show();
                 Intent intent = new Intent(view.getContext(), RequestActivity.class);
-                view.getContext().startActivity(intent);
+                // view.getContext().startActivity(intent);
+                startActivity(intent);
             }
         });
     }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_request"
-    app:startDestination="@id/requestWaitFragment">
+    app:startDestination="@id/requestFragment">
 
     <fragment
         android:id="@+id/requestFragment"
@@ -23,7 +23,8 @@
             android:id="@+id/action_editRequestFragment_to_requestWaitFragment"
             app:destination="@id/requestWaitFragment" />
     </fragment>
-    <fragment android:id="@+id/requestWaitFragment" >
+    <fragment
+        android:id="@+id/requestWaitFragment">
         <action
             android:id="@+id/action_requestWaitFragment_to_editRequestFragment"
             app:destination="@id/editRequestFragment" />
@@ -34,12 +35,16 @@
             android:id="@+id/action_requestWaitFragment_to_requestAcceptedFragment"
             app:destination="@id/requestAcceptedFragment" />
     </fragment>
-    <fragment android:id="@+id/requestAcceptedFragment" >
-        <action
-            android:id="@+id/action_requestAcceptedFragment_to_requestFragment"
-            app:destination="@id/requestFragment" />
-    </fragment>
-    <fragment android:id="@+id/requestRejectedFragment" >
+    <fragment
+        android:id="@+id/requestAcceptedFragment"
+        android:name="com.example.fareshare.ui.fragments.RequestAcceptedFragment"
+        android:label="fragment_requestAccepted"
+        tools:layout="@layout/fragment_request_accepted"/>
+    <fragment
+        android:id="@+id/requestRejectedFragment"
+        android:name="com.example.fareshare.ui.fragments.RequestRejectedFragment"
+        android:label="fragment_requestRejected"
+        tools:layout="@layout/fragment_request_rejected">
         <action
             android:id="@+id/action_requestRejectedFragment_to_requestFragment"
             app:destination="@id/requestFragment" />

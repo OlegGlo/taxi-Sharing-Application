@@ -25,6 +25,15 @@ public class RequestFragment extends Fragment {
     private FragmentRequestBinding binding;
     private NavHostFragment navHostFragment;
 
+
+    public RequestFragment() {
+        // Blank constructor required?
+    }
+
+    public static RequestFragment newInstance() {
+        RequestFragment fragment = new RequestFragment();
+        return fragment;
+    }
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
