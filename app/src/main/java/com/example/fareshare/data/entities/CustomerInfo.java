@@ -49,6 +49,11 @@ public class CustomerInfo {
         return this.email == email && this.password == password;
     }
 
+    @Ignore
+    public String getFullName() {
+        return firstName + lastName;
+    }
+
     public long getCustomerID() {
         return customerID;
     }

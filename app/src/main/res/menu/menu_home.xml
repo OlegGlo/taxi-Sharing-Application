@@ -3,16 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:title="@string/account_button_text"
-        android:id="@+id/account_menu_item" />
+        android:id="@+id/profileFragment" />
     <item
         android:title="@string/groups_button_text"
-        android:id="@+id/account_groups_item" />
+        android:id="@+id/nav_group" />
     <item
         android:title="@string/offer_button_text"
         android:id="@+id/account_offer_item" />
     <item
         android:title="@string/request_button_text"
-        android:id="@+id/account_request_item" />
+        android:id="@+id/nav_request" />
     <item
         android:title="@string/incident_button_text"
         android:id="@+id/account_incident_item" />
