@@ -7,13 +7,17 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.fareshare.databinding.FragmentHomeBinding;
+import com.example.fareshare.viewmodels.SessionViewModel;
 import com.google.android.material.snackbar.Snackbar;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private SessionViewModel viewModel;
 
     @Override
     public View onCreateView(
@@ -28,6 +32,10 @@ public class HomeFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        viewModel = new ViewModelProvider(requireActivity()).get(SessionViewModel.class);
+        //String newText = binding.welcomeMessage.getText().toString().replace("user",viewModel.getCustomerName());
+        //binding.welcomeMessage.setText(newText);
 
         binding.offerButton.setOnClickListener(new View.OnClickListener() {
             @Override

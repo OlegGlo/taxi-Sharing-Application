@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fareshare.CustomerInfoViewModel;
+import com.example.fareshare.viewmodels.CustomerInfoViewModel;
 import com.example.fareshare.R;
 import com.example.fareshare.data.entities.CustomerInfo;
 import com.example.fareshare.data.entities.wrappers.Address;

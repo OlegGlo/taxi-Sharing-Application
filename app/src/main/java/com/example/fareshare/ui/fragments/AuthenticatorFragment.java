@@ -2,12 +2,15 @@ package com.example.fareshare.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fareshare.R;
@@ -18,13 +21,13 @@ import com.google.android.material.snackbar.Snackbar;
 public class AuthenticatorFragment extends Fragment {
 
     private FragmentAuthenticatorBinding binding;
+    private String email;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentAuthenticatorBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -46,7 +49,7 @@ public class AuthenticatorFragment extends Fragment {
             public void onClick(View view) {
                 if(binding.token.getText().toString().equals("123456")) {
                     Snackbar.make(view, "Authentication Successful!", Snackbar.LENGTH_SHORT).show();
-                    switchToHomeActivity();
+                    switchToSessionActivity();
                 } else {
                     Snackbar.make(view, "Authentication Failed!", Snackbar.LENGTH_SHORT).show();
                 }
@@ -57,8 +60,16 @@ public class AuthenticatorFragment extends Fragment {
         });
     }
 
-    private void switchToHomeActivity() {
-        Intent intent = new Intent(getActivity().getBaseContext(), SessionActivity.class);
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    private void switchToSessionActivity() {
+        Intent intent = new Intent(getActivity(), SessionActivity.class);
+        intent.putExtra("customer", email);
+        //Log.d("email", email);
         startActivity(intent);
         getActivity().finish();
     }

@@ -6,26 +6,32 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.fareshare.CustomerInfoViewModel;
+import com.example.fareshare.data.DispatcherRepository;
 import com.example.fareshare.data.entities.CustomerInfo;
 import com.example.fareshare.databinding.ActivityMainBinding;
+import com.example.fareshare.viewmodels.CustomerInfoViewModel;
+import com.example.fareshare.viewmodels.DispatcherViewModel;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    CustomerInfoViewModel viewModel;
+    private CustomerInfoViewModel customerInfoViewModel;
+    private DispatcherViewModel dispatcherViewModel;
 
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        viewModel = new ViewModelProvider(this).get(CustomerInfoViewModel.class);
+        customerInfoViewModel = new ViewModelProvider(this).get(CustomerInfoViewModel.class);
+        dispatcherViewModel = new ViewModelProvider(this).get(DispatcherViewModel.class);
 
-        viewModel.getAllCustomers().observe(this, customerList -> {
+        customerInfoViewModel.getAllCustomers().observe(this, customerList -> {
             if (customerList == null) {
                 return;
             }
@@ -37,4 +43,5 @@ public class MainActivity extends AppCompatActivity{
         });
 
     }
+
 }

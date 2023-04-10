@@ -1,4 +1,4 @@
-package com.example.fareshare.data.entities;
+package com.example.fareshare.data.entities.wrappers;
 
 
 public class CustomerIdentity {
