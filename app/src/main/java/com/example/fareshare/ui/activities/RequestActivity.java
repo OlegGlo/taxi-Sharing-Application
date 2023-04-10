@@ -9,12 +9,15 @@ import androidx.navigation.ui.AppBarConfiguration;
 import android.os.Bundle;
 
 import com.example.fareshare.R;
+import com.example.fareshare.data.entities.CustomerInfo;
 import com.example.fareshare.databinding.ActivityRequestBinding;
+import com.example.fareshare.viewmodels.RequestViewModel;
 
 public class RequestActivity extends AppCompatActivity {
 
     private ActivityRequestBinding binding;
     private NavController navController;
+    private RequestViewModel requestViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

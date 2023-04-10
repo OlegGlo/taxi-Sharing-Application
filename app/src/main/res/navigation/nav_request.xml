@@ -24,7 +24,10 @@
             app:destination="@id/requestWaitFragment" />
     </fragment>
     <fragment
-        android:id="@+id/requestWaitFragment">
+        android:id="@+id/requestWaitFragment"
+        android:name="com.example.fareshare.ui.fragments.RequestWaitFragment"
+        android:label="fragment_requestWait"
+        tools:layout="@layout/fragment_request_wait">
         <action
             android:id="@+id/action_requestWaitFragment_to_editRequestFragment"
             app:destination="@id/editRequestFragment" />

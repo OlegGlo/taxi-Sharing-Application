@@ -115,6 +115,7 @@
     <string name="request_rejected_cancel_button_text">CANCEL</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="request_wait_title_text">Please Wait While We Search for Offers</string>
 
 
 </resources>
