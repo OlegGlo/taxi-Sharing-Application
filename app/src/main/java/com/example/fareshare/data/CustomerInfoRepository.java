@@ -8,7 +8,7 @@ import androidx.lifecycle.LiveData;
 import com.example.fareshare.data.daos.CustomerInfoDao;
 import com.example.fareshare.data.databases.CustomerInfoDB;
 import com.example.fareshare.data.entities.CarpoolGroup;
-import com.example.fareshare.data.entities.wrappers.CustomerIdentity;
+import com.example.fareshare.data.entities.CustomerIdentity;
 import com.example.fareshare.data.entities.CustomerInfo;
 
 import java.util.List;
@@ -40,7 +40,19 @@ public class CustomerInfoRepository {
     }
 
     public CustomerIdentity getVerificationInfo(String email) {
-        return customerInfoDao.getVerificationInfo(email);
+        return customerInfoDao.getID(email);
+    }
+
+    public long addCustomerID(CustomerIdentity customerIdentity) {
+        return customerInfoDao.addCustomerID(customerIdentity);
+    }
+
+    public void delete(CustomerIdentity customerIdentity) {
+        customerInfoDao.delete(customerIdentity);
+    }
+
+    public void update(CustomerIdentity customerIdentity) {
+        customerInfoDao.update(customerIdentity);
     }
 
     public CustomerInfo getByID(Long customerID) {

@@ -11,13 +11,15 @@ import com.example.fareshare.data.daos.CustomerInfoDao;
 
 import com.example.fareshare.data.entities.CarpoolGroup;
 import com.example.fareshare.data.entities.Converters;
+import com.example.fareshare.data.entities.CustomerIdentity;
 import com.example.fareshare.data.entities.CustomerInfo;
 
 
 @Database(
-        version = 4,
+        version = 5,
         entities = {
             CustomerInfo.class,
+            CustomerIdentity.class,
             CarpoolGroup.class}
         )
 @TypeConverters(Converters.class)

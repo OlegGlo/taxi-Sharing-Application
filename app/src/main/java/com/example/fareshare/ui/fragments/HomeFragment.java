@@ -2,6 +2,7 @@ package com.example.fareshare.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +12,22 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.fareshare.Globals;
 import com.example.fareshare.databinding.FragmentHomeBinding;
+
 import com.example.fareshare.ui.activities.RequestActivity;
 import com.example.fareshare.ui.activities.SessionActivity;
+
+import com.example.fareshare.viewmodels.CustomerInfoViewModel;
+
 import com.example.fareshare.viewmodels.SessionViewModel;
 import com.google.android.material.snackbar.Snackbar;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    private SessionViewModel viewModel;
+    private CustomerInfoViewModel customerInfoViewModel;
+    private SessionViewModel sessionViewModel;
 
     @Override
     public View onCreateView(
@@ -36,9 +43,14 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        viewModel = new ViewModelProvider(requireActivity()).get(SessionViewModel.class);
-        //String newText = binding.welcomeMessage.getText().toString().replace("user",viewModel.getCustomerName());
-        //binding.welcomeMessage.setText(newText);
+        customerInfoViewModel = new ViewModelProvider(this).get(CustomerInfoViewModel.class);
+        sessionViewModel = new ViewModelProvider(requireActivity()).get(SessionViewModel.class);
+
+        String email = ((Globals) getActivity().getApplication()).getCustomerID();
+        String name = customerInfoViewModel.getByEmail(email).getFirstName();
+        String newText = binding.welcomeMessage.getText().toString().replace("user",name);
+        Log.d("customer-name", name);
+        binding.welcomeMessage.setText(newText);
 
         binding.offerButton.setOnClickListener(new View.OnClickListener() {
             @Override
