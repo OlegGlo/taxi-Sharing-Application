@@ -15,12 +15,15 @@ public class Incident {
 
     @PrimaryKey
     @ColumnInfo(name = "incident_id")
+    @NonNull
     private String incidentID;
     @NonNull
     @ColumnInfo(name = "email")
     private String email;
     @ColumnInfo(name = "report")
     private String report;
+
+    public Incident() {}
 
     @Ignore
     public Incident(@NonNull String email, String report) {

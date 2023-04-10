@@ -13,7 +13,7 @@ import com.example.fareshare.data.entities.Incident;
 import com.example.fareshare.data.entities.Converters;
 
 
-@Database(
+@Database(version = 1,
         entities = {
                 Incident.class
         }
