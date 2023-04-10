@@ -1,6 +1,9 @@
 package com.example.fareshare.data.entities.wrappers;
 
+import android.provider.Telephony;
+
 import androidx.room.ColumnInfo;
+import androidx.room.Ignore;
 
 public class Address {
     private String street;
@@ -56,5 +59,10 @@ public class Address {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    @Ignore
+    public String toString(){
+        return street + "\n" + postalCode + "\n" + city + ", " + province + "\n" + country;
     }
 }

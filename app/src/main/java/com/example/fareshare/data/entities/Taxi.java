@@ -1,6 +1,7 @@
 package com.example.fareshare.data.entities;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -9,6 +10,7 @@ public class Taxi {
 
     @PrimaryKey
     @NonNull
+    @ColumnInfo(name = "taxi_id")
     private String taxiID;
     private int capacity;
     private boolean isAvailable = true;

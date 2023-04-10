@@ -43,5 +43,9 @@
     android:label="Groups"
     tools:layout="@layout/groups_page" />
     <include app:graph="@navigation/nav_group" />
+<<<<<<< HEAD
     <include app:graph="@navigation/nav_offer" />
+=======
+    <include app:graph="@navigation/nav_request" />
+>>>>>>> 6efdea8000b42a728fa0e34cea1d07ad92d0515c
 </navigation>

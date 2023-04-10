@@ -11,21 +11,22 @@ import androidx.room.PrimaryKey;
 import com.example.fareshare.data.entities.wrappers.Address;
 
 @Entity(tableName = "Customers",
-        indices = {@Index(value = "phone_number", unique = true)})
+        indices = {@Index(value = "phone_number", unique = true),
+                @Index(value = "email", unique = true)})
 public class CustomerInfo {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "customer_id")
     private long customerID;
     @NonNull
     @ColumnInfo(name = "email")
     private String email;
-    @ColumnInfo(name = "password")
-    private String password;
     @ColumnInfo(name = "first_name")
     private String firstName;
     @ColumnInfo(name = "last_name")
     private String lastName;
+    @ColumnInfo(name = "birthday")
+    private String birthday;
     @Embedded private Address address;
     @NonNull
     @ColumnInfo(name = "phone_number")
@@ -35,18 +36,18 @@ public class CustomerInfo {
     @ColumnInfo(name = "rating")
     private double rating;
 
-    public CustomerInfo(@NonNull String email, String password, String firstName, String lastName, Address address, String phoneNumber) {
+    public CustomerInfo(@NonNull String email, String firstName, String lastName, String birthday, Address address, @NonNull String phoneNumber) {
         this.email = email;
-        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.birthday = birthday;
         this.address = address;
         this.phoneNumber = phoneNumber;
     }
 
     @Ignore
-    public boolean verifyUser(String email, String password) {
-        return this.email == email && this.password == password;
+    public String getFullName() {
+        return firstName + lastName;
     }
 
     public long getCustomerID() {
@@ -65,14 +66,6 @@ public class CustomerInfo {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -87,6 +80,14 @@ public class CustomerInfo {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     public Address getAddress() {
