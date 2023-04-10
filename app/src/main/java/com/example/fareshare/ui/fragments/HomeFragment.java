@@ -1,5 +1,6 @@
 package com.example.fareshare.ui.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +14,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.fareshare.Globals;
 import com.example.fareshare.databinding.FragmentHomeBinding;
+
+import com.example.fareshare.ui.activities.RequestActivity;
+import com.example.fareshare.ui.activities.SessionActivity;
+
 import com.example.fareshare.viewmodels.CustomerInfoViewModel;
+
 import com.example.fareshare.viewmodels.SessionViewModel;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -55,7 +61,10 @@ public class HomeFragment extends Fragment {
         binding.requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Started Carpool Request!", Snackbar.LENGTH_SHORT).show();
+                // Snackbar.make(view, "Started Carpool Request!", Snackbar.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), RequestActivity.class);
+                // view.getContext().startActivity(intent);
+                startActivity(intent);
             }
         });
     }

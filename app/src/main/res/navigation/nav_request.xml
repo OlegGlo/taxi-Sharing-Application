@@ -9,5 +9,55 @@
         android:id="@+id/requestFragment"
         android:name="com.example.fareshare.RequestFragment"
         android:label="fragment_request"
-        tools:layout="@layout/fragment_request" />
+        tools:layout="@layout/fragment_request">
+        <action
+            android:id="@+id/action_requestFragment_to_requestWaitFragment"
+            app:destination="@id/requestWaitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editRequestFragment"
+        android:name="com.example.fareshare.EditRequestFragment"
+        android:label="fragment_editRequest"
+        tools:layout="@layout/fragment_edit_request" >
+        <action
+            android:id="@+id/action_editRequestFragment_to_requestWaitFragment"
+            app:destination="@id/requestWaitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestWaitFragment"
+        android:name="com.example.fareshare.ui.fragments.RequestWaitFragment"
+        android:label="fragment_requestWait"
+        tools:layout="@layout/fragment_request_wait">
+        <action
+            android:id="@+id/action_requestWaitFragment_to_editRequestFragment"
+            app:destination="@id/editRequestFragment" />
+        <action
+            android:id="@+id/action_requestWaitFragment_to_requestRejectedFragment"
+            app:destination="@id/requestRejectedFragment" />
+        <action
+            android:id="@+id/action_requestWaitFragment_to_requestAcceptedFragment"
+            app:destination="@id/requestAcceptedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestAcceptedFragment"
+        android:name="com.example.fareshare.ui.fragments.RequestAcceptedFragment"
+        android:label="fragment_requestAccepted"
+        tools:layout="@layout/fragment_request_accepted"/>
+    <fragment
+        android:id="@+id/requestRejectedFragment"
+        android:name="com.example.fareshare.ui.fragments.RequestRejectedFragment"
+        android:label="fragment_requestRejected"
+        tools:layout="@layout/fragment_request_rejected">
+        <action
+            android:id="@+id/action_requestRejectedFragment_to_requestFragment"
+            app:destination="@id/requestFragment" />
+    </fragment>
+
+    <!--    <fragment-->
+<!--        android:id="@+id/"-->
+<!--        android:name="com.example.fareshare."-->
+<!--        android:label="fragment_"-->
+<!--        tools:layout="@layout/" />-->
+
+
 </navigation>

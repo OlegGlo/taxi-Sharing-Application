@@ -106,6 +106,17 @@
     <string name="carpool_end_page_report_button_text">Report Incident</string>
     <string name="destination_box">Edit destination address</string>
     <string name="pickup_box">Edit pickup address</string>
+  
+    <string name="request_accepted_title_text">Your Request Was Accepted!</string>
+    <string name="request_accepted_taxiID_text">TaxiID: Placeholder</string>
+    <string name="request_accepted_passengers_text">Passengers: Placeholder</string>
+    <string name="request_accepted_dest_text">Destination: Placeholder</string>
+    <string name="request_rejected_back_button_text">BACK</string>
+    <string name="request_rejected_title_text">Your Request was Rejected</string>
+    <string name="request_rejected_cancel_button_text">CANCEL</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="request_wait_title_text">Please Wait While We Search for Offers</string>
     <string name="birthday_year_hint">YYYY</string>
     <string name="birthday_month_hint">MM</string>
     <string name="birthday_day_hint">DD</string>
