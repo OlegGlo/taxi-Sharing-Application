@@ -32,9 +32,10 @@ public class DispatcherViewModel extends AndroidViewModel {
 
     //DATABASE METHODS
 
-    public long addCarpool(Carpool carpool){
-        return repository.addCarpool(carpool);
-    }
+    public long addCarpool(Carpool carpool){return repository.addCarpool(carpool);}
+
+    //TODO: implement this so it works placeholder implementation
+    public Carpool getCarpoolFromOffer(Offer offer){return new Carpool();}
 
     public void delete(Carpool carpool) {
         repository.delete(carpool);

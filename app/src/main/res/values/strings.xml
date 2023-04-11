@@ -106,7 +106,7 @@
     <string name="carpool_end_page_report_button_text">Report Incident</string>
     <string name="destination_box">Edit destination address</string>
     <string name="pickup_box">Edit pickup address</string>
-  
+
     <string name="request_accepted_title_text">Your Request Was Accepted!</string>
     <string name="request_accepted_taxiID_text">TaxiID: Placeholder</string>
     <string name="request_accepted_passengers_text">Passengers: Placeholder</string>
