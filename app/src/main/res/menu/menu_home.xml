@@ -18,5 +18,5 @@
         android:id="@+id/incidentFragment" />
     <item
         android:title="@string/logout_button_text"
-        android:id="@+id/account_logout_item" />
+        android:id="@+id/logoutDialog" />
 </menu>
