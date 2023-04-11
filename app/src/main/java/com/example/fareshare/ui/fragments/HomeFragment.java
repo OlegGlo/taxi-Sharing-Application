@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -42,11 +43,11 @@ public class HomeFragment extends Fragment {
         customerInfoViewModel = new ViewModelProvider(this).get(CustomerInfoViewModel.class);
 
         String email = ((Globals) getActivity().getApplication()).getCustomerID();
-//        String name = customerInfoViewModel.getByEmail(email).getFirstName();
-        String name = "Name";
-        String newText = binding.welcomeMessage.getText().toString().replace("user",name);
-        Log.d("customer-name", name);
-        binding.welcomeMessage.setText(newText);
+        String message = "Welcome " + customerInfoViewModel.getByEmail(email).getFirstName();
+
+        TextView WelcomeMessage = (TextView) view.findViewById(R.id.welcome_message);
+
+        WelcomeMessage.setText(message);
 
         binding.offerButton.setOnClickListener(new View.OnClickListener() {
             @Override
