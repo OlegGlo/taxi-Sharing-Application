@@ -24,6 +24,7 @@ import com.example.fareshare.databinding.FragmentRequestBinding;
 import com.example.fareshare.viewmodels.CustomerInfoViewModel;
 import com.example.fareshare.viewmodels.DispatcherViewModel;
 import com.example.fareshare.viewmodels.RequestViewModel;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.w3c.dom.Text;
 
@@ -43,7 +44,6 @@ public class RequestFragment extends Fragment {
     ) {
 
         binding = FragmentRequestBinding.inflate(inflater, container, false);
-        // navHostFragment =
         return binding.getRoot();
     }
 
@@ -66,13 +66,13 @@ public class RequestFragment extends Fragment {
 
                 String destination = destination_box.getText().toString();
                 String pickup = pickup_box.getText().toString();
-                //TODO: Current request object doesn't have time, I just assumed ASAP, can be added though
                 String pickupTime = pickupTime_box.getText().toString();
 
                 String[] p_addr = pickup.split(",");
                 String[] d_addr = destination.split(",");
 
-                if ((p_addr.length == 4)&&(d_addr.length == 4)) {
+                if ((p_addr.length == 5)&&(d_addr.length == 5)) {
+
                     Address pickup_addr = new Address(p_addr[0], p_addr[1], p_addr[2], p_addr[3], p_addr[4]);
                     Address destination_addr = new Address(d_addr[0], d_addr[1], d_addr[2], d_addr[3], d_addr[4]);
                     request = new Request(pickup_addr, destination_addr, pickupTime);
@@ -80,10 +80,13 @@ public class RequestFragment extends Fragment {
 
                     requestViewModel.setRequest(request);
                     dispatcherViewModel.addRequest(request);
-                }
+
                     NavHostFragment.findNavController(RequestFragment.this)
                             .navigate(R.id.action_requestFragment_to_requestWaitFragment);
 
+                } else {
+                    Snackbar.make(view, "Invalid Inputs", Snackbar.LENGTH_SHORT).show();
+                }
             }
 
         });

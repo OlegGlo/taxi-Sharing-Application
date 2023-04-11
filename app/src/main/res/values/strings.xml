@@ -106,7 +106,7 @@
     <string name="carpool_end_page_report_button_text">Report Incident</string>
     <string name="destination_box">Edit destination address</string>
     <string name="pickup_box">Edit pickup address</string>
-  
+
     <string name="request_accepted_title_text">Your Request Was Accepted!</string>
     <string name="request_accepted_taxiID_text">TaxiID: Placeholder</string>
     <string name="request_accepted_passengers_text">Passengers: Placeholder</string>
@@ -120,10 +120,23 @@
     <string name="birthday_year_hint">YYYY</string>
     <string name="birthday_month_hint">MM</string>
     <string name="birthday_day_hint">DD</string>
+    <string name="request_select_submit_button_text">SUBMIT</string>
+    <string name="request_select_cancel_button_text">CANCEL</string>
+    <string name="request_select_title_text">Select an Offer</string>
+    <string name="request_select_editText_text">Select Offer</string>
+    <string name="incident_textbox_hint">Enter details of the incident here</string>
+    <string name="incident_email_hint">Enter email here</string>
+    <string name="incident_page_title">Incident Report</string>
 
     <!-- Strings for Google Maps -->
     <string name = "google_maps_api_key">AIzaSyCbdncRgHDvT0-FiS2OrO0laxmHIPFYLek</string>
     <string name="title_activity_maps">MapsActivity</string>
 
+=======
+    <!-- Logout Strings -->
+    <string name="logout">Logout?</string>
+    <string name="logout_confirm">Confirm</string>
+    <string name="logout_cancel">Cancel</string>
+>>>>>>> origin/master
 
 </resources>

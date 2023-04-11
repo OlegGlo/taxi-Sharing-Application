@@ -59,7 +59,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        calculateDirections(//TODO getLocationFromAddress(pickup address (string)), getLocationFromAddress((must be string)Carpool.getDestination()));
     }
 
     private void calculateDirections(LatLng mStart, LatLng mDest){
@@ -105,7 +104,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         ));
                     }
                     Polyline polyline = mMap.addPolyline(new PolylineOptions().addAll(newDecodedPath));
-                    polyline.setColor(ContextCompat.getColor(getActivity(), com.google.android.material.R.color.design_default_color_primary_dark));
+                    //.setColor(ContextCompat.getColor(getActivity(), com.google.android.material.R.color.design_default_color_primary_dark));
                     polyline.setClickable(true);
 
                 }

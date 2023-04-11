@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "a5d0b1f635a96726e9527fd608a43df4",
+    "identityHash": "56cd3a2c3972b4640e8603f4e74bf295",
     "entities": [
       {
         "tableName": "Customers",
@@ -108,7 +108,7 @@
       },
       {
         "tableName": "CarpoolGroup",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`group_id` INTEGER, `group_name` TEXT, `leader_id` INTEGER, PRIMARY KEY(`group_id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`group_id` INTEGER PRIMARY KEY AUTOINCREMENT, `group_name` TEXT, `leader_id` INTEGER, `members` TEXT)",
         "fields": [
           {
             "fieldPath": "groupID",
@@ -127,10 +127,16 @@
             "columnName": "leader_id",
             "affinity": "INTEGER",
             "notNull": false
+          },
+          {
+            "fieldPath": "members",
+            "columnName": "members",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
-          "autoGenerate": false,
+          "autoGenerate": true,
           "columnNames": [
             "group_id"
           ]
@@ -202,7 +208,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a5d0b1f635a96726e9527fd608a43df4')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '56cd3a2c3972b4640e8603f4e74bf295')"
     ]
   }
 }

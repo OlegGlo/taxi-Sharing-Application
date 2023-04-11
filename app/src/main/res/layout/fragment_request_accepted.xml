@@ -48,9 +48,9 @@
         <com.google.android.gms.maps.MapView
             android:id="@+id/request_accepted_mapview"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="343dp"
             android:contentDescription="@string/carpool_ride_page_mapview_desc"
-            android:padding="12sp"/>
+            android:padding="12sp" />
     </LinearLayout>
 
 </FrameLayout>

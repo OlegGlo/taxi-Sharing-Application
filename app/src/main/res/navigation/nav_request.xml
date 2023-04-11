@@ -29,14 +29,8 @@
         android:label="fragment_requestWait"
         tools:layout="@layout/fragment_request_wait">
         <action
-            android:id="@+id/action_requestWaitFragment_to_editRequestFragment"
-            app:destination="@id/editRequestFragment" />
-        <action
-            android:id="@+id/action_requestWaitFragment_to_requestRejectedFragment"
-            app:destination="@id/requestRejectedFragment" />
-        <action
-            android:id="@+id/action_requestWaitFragment_to_requestAcceptedFragment"
-            app:destination="@id/requestAcceptedFragment" />
+            android:id="@+id/action_requestWaitFragment_to_requestSelectFragment"
+            app:destination="@id/requestSelectFragment" />
     </fragment>
     <fragment
         android:id="@+id/requestAcceptedFragment"
@@ -49,8 +43,23 @@
         android:label="fragment_requestRejected"
         tools:layout="@layout/fragment_request_rejected">
         <action
-            android:id="@+id/action_requestRejectedFragment_to_requestFragment"
-            app:destination="@id/requestFragment" />
+            android:id="@+id/action_requestRejectedFragment_to_requestSelectFragment"
+            app:destination="@id/requestSelectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestSelectFragment"
+        android:name="com.example.fareshare.ui.fragments.RequestSelectFragment"
+        android:label="fragment_request_select"
+        tools:layout="@layout/fragment_request_select" >
+        <action
+            android:id="@+id/action_requestSelectFragment_to_requestRejectedFragment"
+            app:destination="@id/requestRejectedFragment" />
+        <action
+            android:id="@+id/action_requestSelectFragment_to_requestAcceptedFragment"
+            app:destination="@id/requestAcceptedFragment" />
+        <action
+            android:id="@+id/action_requestSelectFragment_to_editRequestFragment"
+            app:destination="@id/editRequestFragment" />
     </fragment>
 
     <!--    <fragment-->

@@ -47,7 +47,7 @@ public class CustomerInfo {
 
     @Ignore
     public String getFullName() {
-        return firstName + lastName;
+        return firstName + " " + lastName;
     }
 
     public long getCustomerID() {

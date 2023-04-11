@@ -9,6 +9,7 @@
         android:text="Scan Taxi QR Code"
         android:layout_centerInParent="true"
         android:id="@+id/button_scan"
-        />
+        android:backgroundTint="@color/fareShare_yellow"
+        android:textColor="@color/black"/>
 
 </RelativeLayout>

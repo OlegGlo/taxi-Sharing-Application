@@ -12,13 +12,11 @@ import com.example.fareshare.data.daos.IncidentDao;
 import com.example.fareshare.data.entities.Incident;
 import com.example.fareshare.data.entities.Converters;
 
-
-@Database(
-        version = 1,
+@Database(version = 1,
         entities = {
                 Incident.class
-        }
-)
+        })
+
 public abstract class IncidentDB extends RoomDatabase {
 
     public abstract IncidentDao incidentDao();

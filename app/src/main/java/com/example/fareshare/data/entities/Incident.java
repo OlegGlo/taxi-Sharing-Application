@@ -23,6 +23,9 @@ public class Incident {
     @ColumnInfo(name = "report")
     private String report;
 
+    public Incident() {}
+
+    @Ignore
     public Incident(@NonNull String email, String report) {
         this.email = email;
         this.report = report;
