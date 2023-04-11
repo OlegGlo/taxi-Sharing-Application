@@ -44,7 +44,6 @@ public class RequestFragment extends Fragment {
     ) {
 
         binding = FragmentRequestBinding.inflate(inflater, container, false);
-        // navHostFragment =
         return binding.getRoot();
     }
 
@@ -72,7 +71,7 @@ public class RequestFragment extends Fragment {
                 String[] p_addr = pickup.split(",");
                 String[] d_addr = destination.split(",");
 
-                if ((p_addr.length == 4)&&(d_addr.length == 4)) {
+                if ((p_addr.length == 5)&&(d_addr.length == 5)) {
 
                     Address pickup_addr = new Address(p_addr[0], p_addr[1], p_addr[2], p_addr[3], p_addr[4]);
                     Address destination_addr = new Address(d_addr[0], d_addr[1], d_addr[2], d_addr[3], d_addr[4]);
