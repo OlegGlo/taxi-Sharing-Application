@@ -19,6 +19,7 @@ public class Offer {
     @ColumnInfo(name = "max_passengers")
     private int maxPassengers;
     private boolean open;
+    private String taxiID;
 
     public Offer(){}
 
@@ -28,6 +29,7 @@ public class Offer {
         this.destination = destination;
         this.maxPassengers = maxPassengers;
         this.open = open;
+        this.taxiID = null;
     }
 
     public String getOfferer() {
@@ -60,6 +62,12 @@ public class Offer {
 
     public void setMaxPassengers(int maxPassengers) {
         this.maxPassengers = maxPassengers;
+    }
+    public String getTaxiID() {
+        return taxiID;
+    }
+    public void setTaxiID(String taxiID) {
+        this.taxiID = taxiID;
     }
 
     public boolean isOpen() {

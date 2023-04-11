@@ -1,15 +1,19 @@
 package com.example.fareshare;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.fareshare.data.entities.Offer;
+import com.example.fareshare.data.entities.wrappers.Address;
 import com.example.fareshare.databinding.OfferCarpoolPageBinding;
 
 public class OfferCarpoolPage extends Fragment {
@@ -22,7 +26,8 @@ public class OfferCarpoolPage extends Fragment {
     String pickup_string;
     String destination_string;
     String date_string;
-    String passenger_string;
+    int passenger_int;
+    Offer offer;
 
 
     @Override
@@ -58,10 +63,18 @@ public class OfferCarpoolPage extends Fragment {
             public void onClick(View view) {
                 pickup_string = pickup_address.getText().toString();
                 destination_string = destination_address.getText().toString();
+                String[] parts = destination_string.split(",");
+                String street = parts[0].strip();
+                String city = parts[1].strip();
+                String province = parts[2].strip();
+                String postalCode = parts[3].strip();
+                String country = parts[4].strip();
+                Address destination = new Address(street, city, province, postalCode, country);
                 date_string = date.getText().toString();
-                passenger_string = num_passengers.getText().toString();
-
-                // saved these values but not sure how to get them to show on info page
+                passenger_int = Integer.valueOf(num_passengers.getText().toString());
+                String offerer_id = ((Globals) getActivity().getApplication()).getCustomerID();
+                offer = new Offer(offerer_id, destination, passenger_int, true);
+                ((Globals) getActivity().getApplication()).setOffer(offer);
                 NavHostFragment.findNavController(OfferCarpoolPage.this)
                         .navigate(R.id.action_offerCarpoolPage_to_scanPage);
             }
