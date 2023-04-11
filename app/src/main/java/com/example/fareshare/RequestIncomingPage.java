@@ -26,6 +26,7 @@ public class RequestIncomingPage extends Fragment {
     String lastname = "Smith";
     double rate = 4.5;
 
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,

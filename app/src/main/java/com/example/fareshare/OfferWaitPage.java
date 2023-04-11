@@ -1,6 +1,5 @@
 package com.example.fareshare;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,8 +22,6 @@ import java.util.ArrayList;
 public class OfferWaitPage extends Fragment {
 
     private OfferWaitPageBinding binding;
-    TextView textView;
-
 
     @Override
     public View onCreateView(
@@ -62,7 +59,6 @@ public class OfferWaitPage extends Fragment {
             }
         });
     }
-
 
     @Override
     public void onDestroyView() {

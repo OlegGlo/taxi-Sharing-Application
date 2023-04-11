@@ -11,6 +11,7 @@ import com.example.fareshare.data.entities.Offer;
 import com.example.fareshare.data.entities.Request;
 import com.example.fareshare.data.entities.wrappers.RequestUpdate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DispatcherViewModel extends AndroidViewModel {
@@ -26,9 +27,16 @@ public class DispatcherViewModel extends AndroidViewModel {
         requestList = repository.getRequests();
     }
 
+    public ArrayList<Offer> matchWithOffers(Request request) {
+        ArrayList<Offer> offers = new ArrayList<>();
 
-
-
+        for (Offer o: offerList.getValue()) {
+            if (o.getDestination().toString().equals(request.getDestination().toString())) {
+                offers.add(o);
+            }
+        }
+        return offers;
+    }
 
     //DATABASE METHODS
 

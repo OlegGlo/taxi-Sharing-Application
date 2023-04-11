@@ -5,14 +5,31 @@
     android:id="@+id/nav_session"
     app:startDestination="@id/homeFragment">
 
+    <dialog
+        android:id="@+id/logoutDialog"
+        android:name="com.example.fareshare.ui.fragments.LogoutDialog">
+        <argument android:name="myarg" android:defaultValue="@null" />
+    </dialog>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.fareshare.ui.fragments.HomeFragment"
         android:label="@string/title_activity_home"
         tools:layout="@layout/fragment_home" >
         <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_incidentFragment"
+            app:destination="@id/incidentFragment" />
+        <action
             android:id="@+id/action_homeFragment_to_groupsPage"
-            app:destination="@id/groupsPage" />
+            app:destination="@id/groupsGraph" />
+        <action
+            android:id="@+id/action_homeFragment_to_offerCarpoolPage"
+            app:destination="@id/offerGraph" />
+        <action
+            android:id="@+id/action_homeFragment_to_requestFragment"
+            app:destination="@id/requestGraph" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -21,14 +38,159 @@
         tools:layout="@layout/fragment_profile" >
     </fragment>
     <fragment
-    android:id="@+id/groupsPage"
-    android:name="com.example.fareshare.GroupsPage"
-    android:label="Groups"
-    tools:layout="@layout/groups_page" >
+        android:id="@+id/incidentFragment"
+        android:name="com.example.fareshare.ui.fragments.IncidentFragment"
+        android:label="fragment_incident"
+        tools:layout="@layout/fragment_incident" >
+        <action
+            android:id="@+id/action_incidentFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
-
-    <include app:graph="@navigation/nav_group" />
-    <include app:graph="@navigation/nav_offer" />
-    <include app:graph="@navigation/nav_incident" />
-    <include app:graph="@navigation/nav_request" />
+    <navigation android:id="@+id/groupsGraph"
+        app:startDestination="@id/groupsPage">
+        <fragment
+            android:id="@+id/createGroupPage"
+            android:name="com.example.fareshare.CreateGroupPage"
+            android:label="create_group_page"
+            tools:layout="@layout/create_group_page">
+            <action
+                android:id="@+id/action_createGroupPage_to_groupsPage"
+                app:destination="@id/groupsPage" />
+            <action
+                android:id="@+id/action_createGroupPage_to_groupInfoPage"
+                app:destination="@id/groupInfoPage" />
+        </fragment>
+        <fragment
+            android:id="@+id/groupInfoPage"
+            android:name="com.example.fareshare.GroupInfoPage"
+            android:label="group_info_page"
+            tools:layout="@layout/group_info_page">
+            <action
+                android:id="@+id/action_groupInfoPage_to_editGroupPage"
+                app:destination="@id/editGroupPage" />
+            <action
+                android:id="@+id/action_groupInfoPage_to_groupsPage"
+                app:destination="@id/groupsPage" />
+        </fragment>
+        <fragment
+            android:id="@+id/editGroupPage"
+            android:name="com.example.fareshare.EditGroupPage"
+            android:label="edit_group_page"
+            tools:layout="@layout/edit_group_page">
+            <action
+                android:id="@+id/action_editGroupPage_to_groupInfoPage"
+                app:destination="@id/groupInfoPage" />
+            <action
+                android:id="@+id/action_editGroupPage_to_groupsPage"
+                app:destination="@id/groupsPage" />
+        </fragment>
+        <fragment
+            android:id="@+id/groupsPage"
+            android:name="com.example.fareshare.GroupsPage"
+            android:label="groups_page"
+            tools:layout="@layout/groups_page">
+            <action
+                android:id="@+id/action_groupsPage_to_createGroupPage"
+                app:destination="@id/createGroupPage" />
+            <action
+                android:id="@+id/action_groupsPage_to_groupInfoPage"
+                app:destination="@id/groupInfoPage" />
+            <action
+                android:id="@+id/action_groupsPage_to_groupsPage"
+                app:destination="@id/groupsPage" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_homeFragment"
+            app:destination="@id/homeFragment" />
+    </navigation>
+    <navigation android:id="@+id/offerGraph"
+        app:startDestination="@id/offerCarpoolPage">
+        <fragment
+            android:id="@+id/scanPage"
+            android:name="com.example.fareshare.ScanPage"
+            android:label="ScanPage" />
+        <fragment
+            android:id="@+id/requestIncomingPage"
+            android:name="com.example.fareshare.RequestIncomingPage"
+            android:label="RequestIncomingPage">
+            <action
+                android:id="@+id/action_requestIncomingPage_to_offerWaitPage"
+                app:destination="@id/offerWaitPage" />
+        </fragment>
+        <fragment
+            android:id="@+id/offerWaitPage"
+            android:name="com.example.fareshare.OfferWaitPage"
+            android:label="OfferWaitPage">
+            <action
+                android:id="@+id/action_offerWaitPage_to_requestIncomingPage"
+                app:destination="@id/requestIncomingPage" />
+        </fragment>
+        <fragment
+            android:id="@+id/offerCarpoolPage"
+            android:name="com.example.fareshare.OfferCarpoolPage"
+            android:label="OfferCarpoolPage">
+            <action
+                android:id="@+id/action_offerCarpoolPage_to_scanPage"
+                app:destination="@id/scanPage" />
+            <action
+                android:id="@+id/action_offerCarpoolPage_to_offerWaitPage"
+                app:destination="@id/offerWaitPage" />
+            <action
+                android:id="@+id/action_offerCarpoolPage_to_homeFragment"
+                app:destination="@id/homeFragment" />
+        </fragment>
+    </navigation>
+    <navigation android:id="@+id/requestGraph"
+        app:startDestination="@id/requestFragment">
+        <fragment
+            android:id="@+id/editRequestFragment"
+            android:name="com.example.fareshare.EditRequestFragment"
+            android:label="fragment_editRequest"
+            tools:layout="@layout/fragment_edit_request">
+            <action
+                android:id="@+id/action_editRequestFragment_to_requestWaitFragment"
+                app:destination="@id/requestWaitFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/requestRejectedFragment"
+            android:name="com.example.fareshare.ui.fragments.RequestRejectedFragment"
+            android:label="fragment_requestRejected"
+            tools:layout="@layout/fragment_request_rejected">
+            <action
+                android:id="@+id/action_requestRejectedFragment_to_requestFragment"
+                app:destination="@id/requestFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/requestFragment"
+            android:name="com.example.fareshare.RequestFragment"
+            android:label="fragment_request"
+            tools:layout="@layout/fragment_request">
+            <action
+                android:id="@+id/action_requestFragment_to_requestWaitFragment"
+                app:destination="@id/requestWaitFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/requestAcceptedFragment"
+            android:name="com.example.fareshare.ui.fragments.RequestAcceptedFragment"
+            android:label="fragment_requestAccepted"
+            tools:layout="@layout/fragment_request_accepted" />
+        <fragment
+            android:id="@+id/requestWaitFragment"
+            android:name="com.example.fareshare.ui.fragments.RequestWaitFragment"
+            android:label="fragment_requestWait"
+            tools:layout="@layout/fragment_request_wait">
+            <action
+                android:id="@+id/action_requestWaitFragment_to_editRequestFragment"
+                app:destination="@id/editRequestFragment" />
+            <action
+                android:id="@+id/action_requestWaitFragment_to_requestRejectedFragment"
+                app:destination="@id/requestRejectedFragment" />
+            <action
+                android:id="@+id/action_requestWaitFragment_to_requestAcceptedFragment"
+                app:destination="@id/requestAcceptedFragment" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_homeFragment"
+            app:destination="@id/homeFragment" />
+    </navigation>
 </navigation>
