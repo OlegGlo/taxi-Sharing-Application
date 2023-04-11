@@ -13,13 +13,27 @@ public class RequestViewModel extends ViewModel  {
 
     private CustomerInfo customer;
     private Request request;
-    private LiveData<List<Offer>> offers;
+    private List<Offer> offers;
+    private Offer accepted_offer;
+    private String customerID;
 
-    public LiveData<List<Offer>> getOffers() {
+    public Offer getAccepted_offer() {
+        return accepted_offer;
+    }
+
+    public void setAccepted_offer(Offer accepted_offer) {
+        this.accepted_offer = accepted_offer;
+    }
+
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
+    }
+
+    public List<Offer> getOffers() {
         return offers;
     }
 
-    public void setOffers(LiveData<List<Offer>> offers) {
+    public void setOffers(List<Offer> offers) {
         this.offers = offers;
     }
 
