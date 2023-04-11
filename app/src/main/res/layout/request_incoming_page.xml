@@ -38,7 +38,7 @@
 
             <Button
                 android:id="@+id/request_incoming_next_button"
-                android:layout_width="72dp"
+                android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
@@ -50,7 +50,7 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="240dp"
             android:layout_marginTop="24dp"
             android:contentDescription="@string/request_incoming_ppic_desc"
