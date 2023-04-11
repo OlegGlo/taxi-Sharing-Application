@@ -35,7 +35,7 @@ public class IncidentFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        viewModel = new ViewModelProvider().get(IncidentViewModel.class);
+        viewModel = new ViewModelProvider(requireActivity()).get(IncidentViewModel.class);
         binding.submitIncidentButton.setOnClickListener(new View.OnClickListener() {
 
             @Override

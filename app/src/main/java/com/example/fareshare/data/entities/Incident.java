@@ -14,6 +14,7 @@ import java.util.UUID;
 public class Incident {
 
     @PrimaryKey
+    @NonNull
     @ColumnInfo(name = "incident_id")
     private String incidentID;
     @NonNull
@@ -22,7 +23,6 @@ public class Incident {
     @ColumnInfo(name = "report")
     private String report;
 
-    @Ignore
     public Incident(@NonNull String email, String report) {
         this.email = email;
         this.report = report;

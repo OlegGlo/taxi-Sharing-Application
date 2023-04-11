@@ -26,8 +26,8 @@
             android:id="@+id/action_offerWaitPage_to_requestIncomingPage"
             app:destination="@id/requestIncomingPage" />
         <action
-            android:id="@+id/action_offerWaitPage_to_carpoolRidePage"
-            app:destination="@id/carpoolRidePage" />
+            android:id="@+id/action_offerWaitPage_to_carpoolRidePage"/>
+<!--            app:destination=""-->
     </fragment>
     <fragment
         android:id="@+id/requestIncomingPage"
@@ -38,7 +38,7 @@
             android:id="@+id/action_requestIncomingPage_to_offerWaitPage"
             app:destination="@id/offerWaitPage" />
         <action
-            android:id="@+id/action_requestIncomingPage_to_carpoolRidePage"
-            app:destination="@id/carpoolRidePage" />
+            android:id="@+id/action_requestIncomingPage_to_carpoolRidePage"/>
+            <!--app:destination="@id/carpoolRidePage" -->
     </fragment>
 </navigation>

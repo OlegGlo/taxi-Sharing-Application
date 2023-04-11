@@ -121,5 +121,9 @@
     <string name="birthday_month_hint">MM</string>
     <string name="birthday_day_hint">DD</string>
 
+    <!-- Strings for Google Maps -->
+    <string name = "google_maps_api_key">AIzaSyCbdncRgHDvT0-FiS2OrO0laxmHIPFYLek</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
 
 </resources>
