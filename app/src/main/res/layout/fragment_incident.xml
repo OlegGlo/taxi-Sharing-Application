@@ -26,7 +26,7 @@
                 android:id="@+id/incident_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Incident Report"
+                android:text="@string/incident_page_title"
                 android:textSize="36sp"
                 android:textStyle="bold"
                 android:textColor="@color/black" />
@@ -36,11 +36,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/fareShare_yellow"
-                android:hint="Enter email here"
+                android:hint="@string/incident_email_hint"
                 android:shadowColor="@color/black"
                 android:textColorHint="@color/black"
                 android:padding="12dp"
-                android:inputType="text"
+                android:inputType="textEmailAddress"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
                 android:layout_marginTop="40dp"
@@ -49,17 +49,17 @@
             <EditText
                 android:id="@+id/report_box"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="40dp"
+                android:autofillHints=""
                 android:backgroundTint="@color/fareShare_yellow"
-                android:hint="Enter details of the incident here"
-                android:shadowColor="@color/black"
-                android:textColorHint="@color/black"
+                android:hint="@string/incident_textbox_hint"
+                android:inputType="textMultiLine"
                 android:padding="12dp"
-                android:inputType="text"
+                android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:layout_marginTop="40dp"
-                android:autofillHints="" />
+                android:textColorHint="@color/black" />
 
            <LinearLayout
                 android:layout_width="match_parent"

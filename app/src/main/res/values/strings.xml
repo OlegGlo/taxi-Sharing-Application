@@ -120,6 +120,9 @@
     <string name="birthday_year_hint">YYYY</string>
     <string name="birthday_month_hint">MM</string>
     <string name="birthday_day_hint">DD</string>
+    <string name="incident_textbox_hint">Enter details of the incident here</string>
+    <string name="incident_email_hint">Enter email here</string>
+    <string name="incident_page_title">Incident Report</string>
 
 
 </resources>

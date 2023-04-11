@@ -38,7 +38,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_create_group"
         app:layout_constraintVertical_bias="0.99"
-        app:menu="@menu/bottom_nav" >
+        app:menu="@menu/menu_home_bottom_nav" >
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
