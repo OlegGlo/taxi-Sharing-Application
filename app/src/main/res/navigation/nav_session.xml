@@ -34,7 +34,7 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.fareshare.ui.fragments.ProfileFragment"
-        android:label="@string/registration_page_title"
+        android:label="Account Info"
         tools:layout="@layout/fragment_profile" >
     </fragment>
     <fragment
