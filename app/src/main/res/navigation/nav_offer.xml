@@ -16,6 +16,18 @@
         <action
             android:id="@+id/action_offerCarpoolPage_to_offerWaitPage"
             app:destination="@id/offerWaitPage" />
+        <action
+            android:id="@+id/action_offerCarpoolPage_to_scanPage"
+            app:destination="@id/scanPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanPage"
+        android:name="com.example.fareshare.ScanPage"
+        android:label="scan_page"
+        tools:layout="@layout/fragment_scan_page" >
+        <action
+            android:id="@+id/action_scanPage_to_offerWaitPage"
+            app:destination="@id/offerWaitPage" />
     </fragment>
     <fragment
         android:id="@+id/offerWaitPage"
@@ -25,9 +37,9 @@
         <action
             android:id="@+id/action_offerWaitPage_to_requestIncomingPage"
             app:destination="@id/requestIncomingPage" />
-<!--        <action-->
-<!--            android:id="@+id/action_offerWaitPage_to_carpoolRidePage"-->
-<!--            app:destination="@id/carpoolRidePage" />-->
+        <action
+            android:id="@+id/action_offerWaitPage_to_carpoolRidePage"
+            app:destination="@id/carpoolRidePage" />
     </fragment>
     <fragment
         android:id="@+id/requestIncomingPage"
@@ -37,9 +49,6 @@
         <action
             android:id="@+id/action_requestIncomingPage_to_offerWaitPage"
             app:destination="@id/offerWaitPage" />
-<!--        <action-->
-<!--            android:id="@+id/action_requestIncomingPage_to_carpoolRidePage"-->
-<!--            app:destination="@id/carpoolRidePage" />-->
     </fragment>
     <fragment
         android:id="@+id/carpoolRidePage"

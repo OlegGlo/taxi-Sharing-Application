@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "358e7ac73c0ff181ab66107041215022",
+    "identityHash": "b46fcdcfd7d670756e88eb81cb683e1d",
     "entities": [
       {
         "tableName": "Carpool",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`carpool_id` INTEGER, `num_passengers` INTEGER NOT NULL, `passengers` TEXT, `destination` TEXT, `taxi_id` TEXT, `ongoing` INTEGER NOT NULL, PRIMARY KEY(`carpool_id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`carpool_id` INTEGER, `num_passengers` INTEGER NOT NULL, `requesters` TEXT, `offerer` TEXT, `destination` TEXT, `taxi_id` TEXT, `ongoing` INTEGER NOT NULL, PRIMARY KEY(`carpool_id`))",
         "fields": [
           {
             "fieldPath": "carpoolID",
@@ -21,8 +21,14 @@
             "notNull": true
           },
           {
-            "fieldPath": "passengers",
-            "columnName": "passengers",
+            "fieldPath": "requesters",
+            "columnName": "requesters",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "offerer",
+            "columnName": "offerer",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -56,7 +62,7 @@
       },
       {
         "tableName": "Offer",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`offer_id` INTEGER PRIMARY KEY AUTOINCREMENT, `offerer` TEXT, `max_passengers` INTEGER NOT NULL, `open` INTEGER NOT NULL, `street` TEXT, `city` TEXT, `province` TEXT, `postal_code` TEXT, `country` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`offer_id` INTEGER PRIMARY KEY AUTOINCREMENT, `offerer` TEXT, `max_passengers` INTEGER NOT NULL, `open` INTEGER NOT NULL, `taxiID` TEXT, `street` TEXT, `city` TEXT, `province` TEXT, `postal_code` TEXT, `country` TEXT)",
         "fields": [
           {
             "fieldPath": "offerID",
@@ -81,6 +87,12 @@
             "columnName": "open",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "taxiID",
+            "columnName": "taxiID",
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "destination.street",
@@ -212,7 +224,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '358e7ac73c0ff181ab66107041215022')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b46fcdcfd7d670756e88eb81cb683e1d')"
     ]
   }
 }

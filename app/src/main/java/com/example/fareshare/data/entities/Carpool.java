@@ -15,7 +15,8 @@ public class Carpool {
     private Long carpoolID;
     @ColumnInfo(name = "num_passengers")
     private int numPassengers;
-    private ArrayList<CustomerInfo> passengers;
+    private ArrayList<Request> requesters;
+    private Offer offerer;
     private String destination;
     @ColumnInfo(name = "taxi_id")
     private String taxiID;
@@ -24,9 +25,10 @@ public class Carpool {
     public Carpool() {}
 
     @Ignore
-    public Carpool(int numPassengers, ArrayList<CustomerInfo> passengers, String destination, String taxiID, boolean ongoing) {
+    public Carpool(int numPassengers, ArrayList<Request> requesters, Offer offerer, String destination, String taxiID, boolean ongoing) {
         this.numPassengers = numPassengers;
-        this.passengers = passengers;
+        this.requesters = requesters;
+        this.offerer = offerer;
         this.destination = destination;
         this.taxiID = taxiID;
         this.ongoing = ongoing;
@@ -48,12 +50,18 @@ public class Carpool {
         this.numPassengers = numPassengers;
     }
 
-    public ArrayList<CustomerInfo> getPassengers() {
-        return passengers;
+    public ArrayList<Request> getRequesters() {
+        return requesters;
     }
 
-    public void setPassengers(ArrayList<CustomerInfo> passengers) {
-        this.passengers = passengers;
+    public void setRequesters(ArrayList<Request> requesters) {
+        this.requesters = requesters;
+    }
+    public Offer getOfferer() {
+        return offerer;
+    }
+    public void setOfferer(Offer offerer) {
+        this.offerer = offerer;
     }
 
     public String getDestination() {

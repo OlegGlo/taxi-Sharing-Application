@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.fareshare.Globals;
 import com.example.fareshare.databinding.FragmentHomeBinding;
 
+import com.example.fareshare.ui.activities.OfferActivity;
 import com.example.fareshare.ui.activities.RequestActivity;
 import com.example.fareshare.ui.activities.SessionActivity;
 
@@ -51,7 +52,8 @@ public class HomeFragment extends Fragment {
         sessionViewModel = new ViewModelProvider(requireActivity()).get(SessionViewModel.class);
 
         String email = ((Globals) getActivity().getApplication()).getCustomerID();
-        String name = customerInfoViewModel.getByEmail(email).getFirstName();
+//        String name = customerInfoViewModel.getByEmail(email).getFirstName();
+        String name = "Name";
         String newText = binding.welcomeMessage.getText().toString().replace("user",name);
         Log.d("customer-name", name);
         binding.welcomeMessage.setText(newText);
@@ -60,8 +62,9 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Started Carpool Offer!", Snackbar.LENGTH_SHORT).show();
-                NavHostFragment.findNavController(HomeFragment.this)
-                        .navigate(R.id.action_homeFragment_to_offerCarpoolPage);
+                Intent intent = new Intent(getActivity(), OfferActivity.class);
+                // view.getContext().startActivity(intent);
+                startActivity(intent);
             }
         });
         binding.requestButton.setOnClickListener(new View.OnClickListener() {

@@ -1,0 +1,56 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "e43b256399433ca96efd8ea82f806371",
+    "entities": [
+      {
+        "tableName": "Incidents",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`incident_id` TEXT NOT NULL, `email` TEXT NOT NULL, `report` TEXT, PRIMARY KEY(`incident_id`))",
+        "fields": [
+          {
+            "fieldPath": "incidentID",
+            "columnName": "incident_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "report",
+            "columnName": "report",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "incident_id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_Incidents_incident_id",
+            "unique": true,
+            "columnNames": [
+              "incident_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Incidents_incident_id` ON `${TABLE_NAME}` (`incident_id`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e43b256399433ca96efd8ea82f806371')"
+    ]
+  }
+}
