@@ -7,7 +7,7 @@
         android:title="@string/home_button_text" />
     <item
         android:title="@string/groups_button_text"
-        android:id="@+id/nav_group"
+        android:id="@+id/groupsGraph"
         android:icon="@drawable/group_icon" />
     <item
         android:id="@+id/profileFragment"

@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -17,18 +18,16 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.fareshare.R;
-import com.example.fareshare.data.entities.CustomerInfo;
 import com.example.fareshare.data.entities.Offer;
 import com.example.fareshare.databinding.ActivitySessionBinding;
 import com.example.fareshare.viewmodels.CustomerInfoViewModel;
 import com.example.fareshare.viewmodels.DispatcherViewModel;
-import com.example.fareshare.viewmodels.SessionViewModel;
+import com.google.android.material.navigation.NavigationView;
 
 public class SessionActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private NavController navController;
-    private SessionViewModel sessionViewModel;
     private CustomerInfoViewModel CIViewModel;
     private DispatcherViewModel dispatcherViewModel;
     private DrawerLayout drawer;
@@ -38,14 +37,12 @@ public class SessionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        sessionViewModel = new ViewModelProvider(this).get(SessionViewModel.class);
         CIViewModel = new ViewModelProvider(this).get(CustomerInfoViewModel.class);
         dispatcherViewModel = new ViewModelProvider(this).get(DispatcherViewModel.class);
 
         Intent intent = getIntent();
         String extra = intent.getStringExtra("customer");
         //Log.d("customer-email", "hello");
-        sessionViewModel.setCustomer(CIViewModel.getByEmail(extra));
 
         binding = ActivitySessionBinding.inflate(getLayoutInflater());
         drawer = binding.drawerLayout;

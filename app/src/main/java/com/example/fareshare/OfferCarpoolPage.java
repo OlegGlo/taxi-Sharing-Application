@@ -47,8 +47,9 @@ public class OfferCarpoolPage extends Fragment {
         binding.offerCarpoolCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 NavHostFragment.findNavController(OfferCarpoolPage.this)
-                        .navigate(R.id.action_offerCarpoolPage_to_homeFragment);
+                        .navigateUp();
             }
         });
 
