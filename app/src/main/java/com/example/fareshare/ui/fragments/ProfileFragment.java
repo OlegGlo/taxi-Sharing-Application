@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,6 +51,7 @@ public class ProfileFragment extends Fragment {
         String textName = id.getFullName();
         String textPhone = id.getPhoneNumber();
         String textEmail = id.getEmail();
+        ImageView imageView = binding.imageView3;
 
         AccountName = (TextView) view.findViewById(R.id.AccountNameField);
         AccountPhone = (TextView) view.findViewById(R.id.AccountPhoneNumField);
@@ -58,6 +60,8 @@ public class ProfileFragment extends Fragment {
         AccountName.setText(textName);
         AccountPhone.setText(textPhone);
         AccountEmail.setText(textEmail);
+
+        imageView.setImageResource(R.drawable.profile_icon);
 
     }
 
