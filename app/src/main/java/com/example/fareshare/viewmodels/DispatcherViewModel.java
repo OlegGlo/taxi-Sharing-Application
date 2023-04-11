@@ -37,6 +37,9 @@ public class DispatcherViewModel extends AndroidViewModel {
     //TODO: implement this so it works placeholder implementation
     public Carpool getCarpoolFromOffer(Offer offer){return new Carpool();}
 
+    //TODO: same as above method
+    public boolean offerAccepted(Offer offer, Request request) {return true;}
+
     public void delete(Carpool carpool) {
         repository.delete(carpool);
     }

@@ -120,6 +120,10 @@
     <string name="birthday_year_hint">YYYY</string>
     <string name="birthday_month_hint">MM</string>
     <string name="birthday_day_hint">DD</string>
+    <string name="request_select_submit_button_text">SUBMIT</string>
+    <string name="request_select_cancel_button_text">CANCEL</string>
+    <string name="request_select_title_text">Select an Offer</string>
+    <string name="request_select_editText_text">Select Offer</string>
 
 
 </resources>
