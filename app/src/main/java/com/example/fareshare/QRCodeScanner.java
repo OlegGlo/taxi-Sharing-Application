@@ -10,7 +10,10 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.fareshare.ui.activities.OfferActivity;
+import com.example.fareshare.ui.activities.SessionActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.journeyapps.barcodescanner.ScanContract;
@@ -47,7 +50,9 @@ public class QRCodeScanner extends AppCompatActivity {
             builder.setTitle("Result");
             builder.setMessage(result.getContents());
             String taxiID = result.getContents();
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+            ((Globals) this.getApplication()).setTaxiID(taxiID);
+            ((Globals) this.getApplication()).getOffer().setTaxiID(taxiID);
+            builder.setPositiveButton("Continue", new DialogInterface.OnClickListener()
             {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {

@@ -1,5 +1,6 @@
 package com.example.fareshare.ui.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,7 +18,12 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.fareshare.Globals;
 import com.example.fareshare.databinding.FragmentHomeBinding;
 
+import com.example.fareshare.ui.activities.OfferActivity;
+import com.example.fareshare.ui.activities.SessionActivity;
+
+
 import com.example.fareshare.viewmodels.CustomerInfoViewModel;
+import com.google.android.material.snackbar.Snackbar;
 
 public class HomeFragment extends Fragment {
 
@@ -41,7 +47,8 @@ public class HomeFragment extends Fragment {
         customerInfoViewModel = new ViewModelProvider(this).get(CustomerInfoViewModel.class);
 
         String email = ((Globals) getActivity().getApplication()).getCustomerID();
-        String name = customerInfoViewModel.getByEmail(email).getFirstName();
+//        String name = customerInfoViewModel.getByEmail(email).getFirstName();
+        String name = "Name";
         String newText = binding.welcomeMessage.getText().toString().replace("user",name);
         Log.d("customer-name", name);
         binding.welcomeMessage.setText(newText);
@@ -49,9 +56,11 @@ public class HomeFragment extends Fragment {
         binding.offerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Snackbar.make(view, "Started Carpool Offer!", Snackbar.LENGTH_SHORT).show();
-                NavHostFragment.findNavController(HomeFragment.this)
-                        .navigate(R.id.action_homeFragment_to_offerCarpoolPage);
+                Snackbar.make(view, "Started Carpool Offer!", Snackbar.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), OfferActivity.class);
+                // view.getContext().startActivity(intent);
+                startActivity(intent);
+
             }
         });
         binding.requestButton.setOnClickListener(new View.OnClickListener() {

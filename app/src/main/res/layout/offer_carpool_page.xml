@@ -3,11 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/white">
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="601dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,62 +32,62 @@
             <EditText
                 android:id="@+id/offer_carpool_destination_box"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:autofillHints=""
                 android:backgroundTint="@color/fareShare_yellow"
                 android:hint="@string/offer_carpool_destination_box_text"
-                android:shadowColor="@color/black"
-                android:textColorHint="@color/black"
-                android:padding="12dp"
                 android:inputType="textPostalAddress"
+                android:padding="12dp"
+                android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:layout_marginTop="40dp"
-                android:autofillHints="" />
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/offer_carpool_pickup_box"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:autofillHints=""
                 android:backgroundTint="@color/fareShare_yellow"
                 android:hint="@string/offer_carpool_pickup_box_text"
-                android:shadowColor="@color/black"
-                android:textColorHint="@color/black"
-                android:padding="12dp"
                 android:inputType="textPostalAddress"
+                android:padding="12dp"
+                android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:layout_marginTop="40dp"
-                android:autofillHints="" />
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/offer_carpool_date_box"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:autofillHints=""
                 android:backgroundTint="@color/fareShare_yellow"
                 android:hint="@string/offer_carpool_date_box_text"
-                android:shadowColor="@color/black"
-                android:textColorHint="@color/black"
-                android:padding="12dp"
                 android:inputType="text|datetime"
+                android:padding="12dp"
+                android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:layout_marginTop="40dp"
-                android:autofillHints="" />
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/offer_carpool_numpass_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:autofillHints=""
                 android:backgroundTint="@color/fareShare_yellow"
                 android:hint="@string/offer_carpool_numpass_box_text"
-                android:shadowColor="@color/black"
-                android:textColorHint="@color/black"
-                android:padding="12dp"
                 android:inputType="number"
+                android:padding="12dp"
+                android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:layout_marginTop="40dp"
-                android:autofillHints="" />
+                android:textColorHint="@color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,10 +99,10 @@
                     android:id="@+id/offer_carpool_submit_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_margin="5dp"
-                    android:text="@string/offer_carpool_submit_text"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/fareShare_yellow"
+                    android:text="@string/offer_carpool_submit_text"
                     android:textColor="@color/black"
                     app:cornerRadius="20dp" />
 
@@ -108,21 +110,21 @@
                     android:id="@+id/offer_carpool_cancel_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_margin="5dp"
-                    android:text="@string/offer_carpool_cancel_text"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/fareShare_yellow"
+                    android:text="@string/offer_carpool_cancel_text"
                     android:textColor="@color/black"
                     app:cornerRadius="20dp" />
             </LinearLayout>
 
             <!-- Drop-down to select vehicle (sedan, suv, minivan, etc.) -->
-<!--            <Spinner-->
-<!--                android:id="@+id/static_spinner"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="48dp"-->
-<!--                android:backgroundTint="@color/fareShare_yellow"-->
-<!--                android:hint="Select Vehicle Type"/>-->
+            <!--            <Spinner-->
+            <!--                android:id="@+id/static_spinner"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="48dp"-->
+            <!--                android:backgroundTint="@color/fareShare_yellow"-->
+            <!--                android:hint="Select Vehicle Type"/>-->
 
         </LinearLayout>
     </ScrollView>

@@ -29,30 +29,6 @@ public class GroupsPage extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        view.findViewById(R.id.homeFragment).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(GroupsPage.this)
-//                        .navigate(R.id.action_groupsPage_to_homeFragment);
-//            }
-//        });
-//
-//        view.findViewById(R.id.groupsPage).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(GroupsPage.this)
-//                        .navigate(R.id.action_groupsPage_to_groupsPage);
-//            }
-//        });
-//
-//        view.findViewById(R.id.accountFragment).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(GroupsPage.this)
-//                        .navigate(R.id.action_groupsPage_to_accountFragment);
-//            }
-//        });
-
         binding.buttonCreateGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
