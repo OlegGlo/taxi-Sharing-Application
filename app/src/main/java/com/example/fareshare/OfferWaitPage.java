@@ -47,8 +47,8 @@ public class OfferWaitPage extends Fragment {
                 String destination = offerer.getDestination().toString();
                 String taxiID = offerer.getTaxiID();
                 Carpool carpool = new Carpool(num_passengers, requesters, offerer, destination, taxiID, true);
-                NavHostFragment.findNavController(OfferWaitPage.this)
-                        .navigate(R.id.action_offerWaitPage_to_carpoolRidePage);
+//                NavHostFragment.findNavController(OfferWaitPage.this)
+//                        .navigate(R.id.action_offerWaitPage_to_carpoolRidePage);
             }
         });
         binding.incomingRequestButton.setOnClickListener(new View.OnClickListener() {

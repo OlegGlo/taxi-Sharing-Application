@@ -13,7 +13,7 @@ import com.example.fareshare.data.entities.Converters;
 import com.example.fareshare.data.entities.Offer;
 import com.example.fareshare.data.entities.Request;
 
-@Database(version = 1,
+@Database(version = 2,
         entities = {
             Carpool.class,
             Offer.class,

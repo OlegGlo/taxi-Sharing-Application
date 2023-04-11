@@ -108,7 +108,11 @@
         <fragment
             android:id="@+id/scanPage"
             android:name="com.example.fareshare.ScanPage"
-            android:label="ScanPage" />
+            android:label="ScanPage" >
+            <action
+                android:id="@+id/action_scanPage_to_offerWaitPage"
+                app:destination="@id/offerWaitPage" />
+        </fragment>
         <fragment
             android:id="@+id/requestIncomingPage"
             android:name="com.example.fareshare.RequestIncomingPage"
