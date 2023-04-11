@@ -56,4 +56,5 @@
         android:label="carpool_ride_page"
         tools:layout="@layout/carpool_ride_page" >
     </fragment>
+<!--    rename GroupsPage to CarpoolRidePage-->
 </navigation>

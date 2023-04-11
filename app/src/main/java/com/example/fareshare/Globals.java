@@ -12,6 +12,7 @@ public class Globals extends Application {
     private String customerID;
     private String taxiID;
     private Offer offer;
+    private Request request;
     private ArrayList<Request> incoming = new ArrayList<>();
     private ArrayList<Request> passengers = new ArrayList<>();
 
@@ -37,6 +38,14 @@ public class Globals extends Application {
 
     public void setOffer(Offer offer) {
         this.offer = offer;
+    }
+
+    public Request getRequest() {
+        return request;
+    }
+
+    public void setRequest(Request request) {
+        this.request = request;
     }
 
     public void addPassenger(Request request) {

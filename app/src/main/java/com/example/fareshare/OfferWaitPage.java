@@ -25,6 +25,7 @@ public class OfferWaitPage extends Fragment {
     private OfferWaitPageBinding binding;
     TextView textView;
 
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -51,6 +52,13 @@ public class OfferWaitPage extends Fragment {
                 Carpool carpool = new Carpool(num_passengers, requesters, offerer, destination, taxiID, true);
                 NavHostFragment.findNavController(OfferWaitPage.this)
                         .navigate(R.id.action_offerWaitPage_to_carpoolRidePage);
+            }
+        });
+        binding.incomingRequestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(OfferWaitPage.this)
+                        .navigate(R.id.action_offerWaitPage_to_requestIncomingPage);
             }
         });
     }
